@@ -1,0 +1,1020 @@
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Ant" \
+	command="/usr/bin/xlock -remote -nice 19 -mode ant -neighbors 4 +truchet"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Ant Truchet" \
+	command="/usr/bin/xlock -remote -nice 19 -mode ant -neighbors 4 -truchet"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Ant3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode ant3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Bee" \
+	command="/usr/bin/xlock -remote -nice 19 -mode ant -neighbors 6 +truchet"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Bee Truchet" \
+	command="/usr/bin/xlock -remote -nice 19 -mode ant -neighbors 6 -truchet"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Bug" \
+	command="/usr/bin/xlock -remote -nice 19 -mode bug"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Demon" \
+	command="/usr/bin/xlock -remote -nice 19 -mode demon"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Dilemma" \
+	command="/usr/bin/xlock -remote -nice 19 -mode dilemma"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Life" \
+	command="/usr/bin/xlock -remote -nice 19 -mode life"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Life Callahan" \
+	command="/usr/bin/xlock -remote -nice 19 -mode life -callahan -size 7"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Life1d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode life1d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Life3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode life3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Loop" \
+	command="/usr/bin/xlock -remote -nice 19 -mode loop"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Petri" \
+	command="/usr/bin/xlock -remote -nice 19 -mode petri"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Voters" \
+	command="/usr/bin/xlock -remote -nice 19 -mode voters"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Wator" \
+	command="/usr/bin/xlock -remote -nice 19 -mode wator"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Wire" \
+	command="/usr/bin/xlock -remote -nice 19 -mode wire"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Automata" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allautomata -fullrandom -neighbors 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Coral" \
+	command="/usr/bin/xlock -remote -nice 19 -mode coral"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Discrete" \
+	command="/usr/bin/xlock -remote -nice 19 -mode discrete"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Dragon" \
+	command="/usr/bin/xlock -remote -nice 19 -mode dragon"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Drift" \
+	command="/usr/bin/xlock -remote -nice 19 -mode drift -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Euler2d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode euler2d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Flame" \
+	command="/usr/bin/xlock -remote -nice 19 -mode flame"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Flow" \
+	command="/usr/bin/xlock -remote -nice 19 -mode flow"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Forest" \
+	command="/usr/bin/xlock -remote -nice 19 -mode forest"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Hop" \
+	command="/usr/bin/xlock -remote -nice 19 -mode hop -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="IFS" \
+	command="/usr/bin/xlock -remote -nice 19 -mode ifs"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Julia" \
+	command="/usr/bin/xlock -remote -nice 19 -mode julia +trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Juliaptr" \
+	command="/usr/bin/xlock -remote -nice 19 -mode julia -trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Kumppa" \
+	command="/usr/bin/xlock -remote -nice 19 -mode kumppa"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Lightning" \
+	command="/usr/bin/xlock -remote -nice 19 -mode lightning"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Lyapunov" \
+	command="/usr/bin/xlock -remote -nice 19 -mode lyapunov -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Mandelbrot" \
+	command="/usr/bin/xlock -remote -nice 19 -mode mandelbrot -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Mountain" \
+	command="/usr/bin/xlock -remote -nice 19 -mode mountain"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Sierpinski" \
+	command="/usr/bin/xlock -remote -nice 19 -mode sierpinski"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Strange" \
+	command="/usr/bin/xlock -remote -nice 19 -mode strange"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Thornbird" \
+	command="/usr/bin/xlock -remote -nice 19 -mode thornbird"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Triangle" \
+	command="/usr/bin/xlock -remote -nice 19 -mode triangle"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Turtle" \
+	command="/usr/bin/xlock -remote -nice 19 -mode turtle"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Vines" \
+	command="/usr/bin/xlock -remote -nice 19 -mode vines"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Fractal" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allfractal -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Apollonian" \
+	command="/usr/bin/xlock -remote -nice 19 -mode apollonian"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Braid" \
+	command="/usr/bin/xlock -remote -nice 19 -mode braid"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Fadeplot" \
+	command="/usr/bin/xlock -remote -nice 19 -mode fadeplot"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Helix" \
+	command="/usr/bin/xlock -remote -nice 19 -mode helix -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Hyper" \
+	command="/usr/bin/xlock -remote -nice 19 -mode hyper"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Ico" \
+	command="/usr/bin/xlock -remote -nice 19 -mode ico"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Kaleid" \
+	command="/usr/bin/xlock -remote -nice 19 -mode kaleid"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Laser" \
+	command="/usr/bin/xlock -remote -nice 19 -mode laser"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Lisa" \
+	command="/usr/bin/xlock -remote -nice 19 -mode lisa"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Lissie" \
+	command="/usr/bin/xlock -remote -nice 19 -mode lissie"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Penrose" \
+	command="/usr/bin/xlock -remote -nice 19 -mode penrose +ammann"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Penrose Ammann" \
+	command="/usr/bin/xlock -remote -nice 19 -mode penrose -ammann"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Petal" \
+	command="/usr/bin/xlock -remote -nice 19 -mode petal"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Polyominoes" \
+	command="/usr/bin/xlock -remote -nice 19 -mode polyominoes"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Qix" \
+	command="/usr/bin/xlock -remote -nice 19 -mode qix +complete"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Qix complete" \
+	command="/usr/bin/xlock -remote -nice 19 -mode qix -complete"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Rotor" \
+	command="/usr/bin/xlock -remote -nice 19 -mode rotor"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Shape" \
+	command="/usr/bin/xlock -remote -nice 19 -mode shape"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Sphere" \
+	command="/usr/bin/xlock -remote -nice 19 -mode sphere"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Spiral" \
+	command="/usr/bin/xlock -remote -nice 19 -mode spiral"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Spline" \
+	command="/usr/bin/xlock -remote -nice 19 -mode spline"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Tik_Tak" \
+	command="/usr/bin/xlock -remote -nice 19 -mode tik_tak"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Toneclock" \
+	command="/usr/bin/xlock -remote -nice 19 -mode toneclock"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Geometry" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allgeometry -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Bouboule" \
+	command="/usr/bin/xlock -remote -nice 19 -mode bouboule +use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Bouboule3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode bouboule -use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Galaxy" \
+	command="/usr/bin/xlock -remote -nice 19 -mode galaxy"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Grav" \
+	command="/usr/bin/xlock -remote -nice 19 -mode grav +trail +decay"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Grav Trail" \
+	command="/usr/bin/xlock -remote -nice 19 -mode grav -trail"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Grav Decay" \
+	command="/usr/bin/xlock -remote -nice 19 -mode grav -decay"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Rock" \
+	command="/usr/bin/xlock -remote -nice 19 -mode star -rock"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Scooter" \
+	command="/usr/bin/xlock -remote -nice 19 -mode scooter"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Space" \
+	command="/usr/bin/xlock -remote -nice 19 -mode space"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Star" \
+	command="/usr/bin/xlock -remote -nice 19 -mode star +rock +use3d +trek 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Star3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode star -use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Star Trek" \
+	command="/usr/bin/xlock -remote -nice 19 -mode star -trek 100"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="World" \
+	command="/usr/bin/xlock -remote -nice 19 -mode world"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Space" \
+	title="Random Space" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allspace"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Anemone" \
+	command="/usr/bin/xlock -remote -nice 19 -mode anemone"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Ball" \
+	command="/usr/bin/xlock -remote -nice 19 -mode ball"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Blot" \
+	command="/usr/bin/xlock -remote -nice 19 -mode blot"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Bounce" \
+	command="/usr/bin/xlock -remote -nice 19 -mode bounce"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Bubble" \
+	command="/usr/bin/xlock -remote -nice 19 -mode bubble"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Clock" \
+	command="/usr/bin/xlock -remote -nice 19 -mode clock"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Crystal" \
+	command="/usr/bin/xlock -remote -nice 19 -mode crystal"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Daisy" \
+	command="/usr/bin/xlock -remote -nice 19 -mode daisy"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Dclock" \
+	command="/usr/bin/xlock -remote -nice 19 -mode dclock"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Decay" \
+	command="/usr/bin/xlock -remote -nice 19 -mode decay"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Deco" \
+	command="/usr/bin/xlock -remote -nice 19 -mode deco"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Deluxe" \
+	command="/usr/bin/xlock -remote -nice 19 -mode deluxe"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Eyes" \
+	command="/usr/bin/xlock -remote -nice 19 -mode eyes +trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Eyesptr" \
+	command="/usr/bin/xlock -remote -nice 19 -mode eyes -trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Fiberlamp" \
+	command="/usr/bin/xlock -remote -nice 19 -mode fiberlamp"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Fzort" \
+	command="/usr/bin/xlock -remote -nice 19 -mode fzort"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Goop" \
+	command="/usr/bin/xlock -remote -nice 19 -mode goop"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Juggle" \
+	command="/usr/bin/xlock -remote -nice 19 -mode juggle"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Marquee" \
+	command="/usr/bin/xlock -remote -nice 19 -mode marquee"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Matrix" \
+	command="/usr/bin/xlock -remote -nice 19 -mode matrix"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Munch" \
+	command="/usr/bin/xlock -remote -nice 19 -mode munch"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Nose" \
+	command="/usr/bin/xlock -remote -nice 19 -mode nose"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Pacman" \
+	command="/usr/bin/xlock -remote -nice 19 -mode pacman"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Pyro" \
+	command="/usr/bin/xlock -remote -nice 19 -mode pyro +use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Pyro3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode pyro -use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Pyro2" \
+	command="/usr/bin/xlock -remote -nice 19 -mode pyro2"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Rain" \
+	command="/usr/bin/xlock -remote -nice 19 -mode rain"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Roll" \
+	command="/usr/bin/xlock -remote -nice 19 -mode roll"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Slip" \
+	command="/usr/bin/xlock -remote -nice 19 -mode slip"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Solitare" \
+	command="/usr/bin/xlock -remote -nice 19 -mode solitaire +trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Solitareptr" \
+	command="/usr/bin/xlock -remote -nice 19 -mode solitaire -trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Starfish" \
+	command="/usr/bin/xlock -remote -nice 19 -mode starfish -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Swarm" \
+	command="/usr/bin/xlock -remote -nice 19 -mode swarm +trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Swarmptr" \
+	command="/usr/bin/xlock -remote -nice 19 -mode swarm -trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Swirl" \
+	command="/usr/bin/xlock -remote -nice 19 -mode swirl -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="T3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode t3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Tetris" \
+	command="/usr/bin/xlock -remote -nice 19 -mode tetris"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Tube" \
+	command="/usr/bin/xlock -remote -nice 19 -mode tube -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Worm" \
+	command="/usr/bin/xlock -remote -nice 19 -mode worm +use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Worm3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode worm -use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Xcl" \
+	command="/usr/bin/xlock -remote -nice 19 -mode xcl"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Assorted" \
+	title="Xjack" \
+	command="/usr/bin/xlock -remote -nice 19 -mode xjack"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XPM" \
+	title="Bat" \
+	command="/usr/bin/xlock -remote -nice 19 -mode bat"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XPM" \
+	title="Image" \
+	command="/usr/bin/xlock -remote -nice 19 -mode image"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XPM" \
+	title="Flag" \
+	command="/usr/bin/xlock -remote -nice 19 -mode flag"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XPM" \
+	title="Life" \
+	command="/usr/bin/xlock -remote -nice 19 -mode life"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XPM" \
+	title="Life1d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode life1d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XPM" \
+	title="Maze" \
+	command="/usr/bin/xlock -remote -nice 19 -mode maze"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XPM" \
+	title="Puzzle" \
+	command="/usr/bin/xlock -remote -nice 19 -mode puzzle"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XPM" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allxpm -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Atlantis" \
+	command="/usr/bin/xlock -remote -nice 19 -mode atlantis"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Atunnels" \
+	command="/usr/bin/xlock -remote -nice 19 -mode atunnels"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Bubble3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode bubble3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Cage" \
+	command="/usr/bin/xlock -remote -nice 19 -mode cage"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Fire" \
+	command="/usr/bin/xlock -remote -nice 19 -mode fire"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Gears" \
+	command="/usr/bin/xlock -remote -nice 19 -mode gears"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="GL-Planet" \
+	command="/usr/bin/xlock -remote -nice 19 -mode glplanet"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Invert" \
+	command="/usr/bin/xlock -remote -nice 19 -mode invert"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Juggler3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode juggler3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Lament" \
+	command="/usr/bin/xlock -remote -nice 19 -mode lament"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Moebius" \
+	command="/usr/bin/xlock -remote -nice 19 -mode moebius"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Molecule" \
+	command="/usr/bin/xlock -remote -nice 19 -mode molecule"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Morph3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode morph3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Noof" \
+	command="/usr/bin/xlock -remote -nice 19 -mode noof"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Pipes" \
+	command="/usr/bin/xlock -remote -nice 19 -mode pipes"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Rubik" \
+	command="/usr/bin/xlock -remote -nice 19 -mode rubik"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Sballs" \
+	command="/usr/bin/xlock -remote -nice 19 -mode sballs"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Sierpinski3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode sierpinski3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Skewb" \
+	command="/usr/bin/xlock -remote -nice 19 -mode skewb"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Sproingies" \
+	command="/usr/bin/xlock -remote -nice 19 -mode sproingies"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Stairs" \
+	command="/usr/bin/xlock -remote -nice 19 -mode stairs"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Superquadrics" \
+	command="/usr/bin/xlock -remote -nice 19 -mode superquadrics"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Text3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode text3d -message \"$LOGNAME\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/GLmodes" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allgl -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/MarqueeMessage" \
+	title="Back Soon" \
+	command="/usr/bin/xlock -remote -nice 19 -mode marquee -message \"$LOGNAME will be back soon.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/MarqueeMessage" \
+	title="Overnight" \
+	command="/usr/bin/xlock -remote -nice 19 -mode marquee -message \"$LOGNAME will be back in the morning.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/MarqueeMessage" \
+	title="Rude" \
+	command="/usr/bin/xlock -remote -nice 19 -mode marquee -message \"$LOGNAME not here, please go away!\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/NoseMessage" \
+	title="Back Soon" \
+	command="/usr/bin/xlock -remote -nice 19 -mode nose -message \"$LOGNAME will be back soon.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/NoseMessage" \
+	title="Overnight" \
+	command="/usr/bin/xlock -remote -nice 19 -mode nose -message \"$LOGNAME will be back in the morning.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/NoseMessage" \
+	title="Rude" \
+	command="/usr/bin/xlock -remote -nice 19 -mode nose -message \"$LOGNAME not here, please go away!\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XjackMessage" \
+	title="Crazy Boy" \
+	command="/usr/bin/xlock -remote -nice 19 -mode xjack -message \"All work and no play makes $LOGNAME a dull boy.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XjackMessage" \
+	title="Crazy Girl" \
+	command="/usr/bin/xlock -remote -nice 19 -mode xjack -message \"All work and no play makes $LOGNAME a dull girl.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Blank" \
+	command="/usr/bin/xlock -remote -nice 19 -mode blank"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Transparent" \
+	command="/usr/bin/xlock -remote -nice 19 -mode blank -geometry 1x1 -enablesaver"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Bomb" \
+	command="/usr/bin/xlock -remote -nice 19 -mode bomb"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Random nice" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allnice -fullrandom -neighbors 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Random standard" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist all-allgl -fullrandom -neighbors 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Random all" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist all -fullrandom -neighbors 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Random 3d" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist all3d -use3d -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Random ptr" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allmouse -trackmouse -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/Special" \
+	title="Random write" \
+	command="/usr/bin/xlock -remote -nice 19 -mode random -modelist allwrite -install -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Ant" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode ant -neighbors 4 +truchet"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Ant Truchet" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode ant -neighbors 4 -truchet"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Ant3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode ant3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Bee" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode ant -neighbors 6 +truchet"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Bee Truchet" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode ant -neighbors 6 -truchet"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Bug" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode bug"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Demon" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode demon"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Dilemma" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode dilemma"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Life" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode life"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Life Callahan" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode life -callahan -size 7"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Life1d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode life1d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Life3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode life3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Loop" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode loop"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Petri" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode petri"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Voters" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode voters"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Wator" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode wator"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Wire" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode wire"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Automata" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allautomata -fullrandom -neighbors 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Coral" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode coral"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Discrete" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode discrete"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Dragon" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode dragon"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Drift" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode drift -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Euler2d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode euler2d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Flame" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode flame"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Flow" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode flow"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Forest" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode forest"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Hop" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode hop -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="IFS" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode ifs"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Julia" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode julia +trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Juliaptr" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode julia -trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Kumppa" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode kumppa"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Lightning" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode lightning"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Lyapunov" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode lyapunov -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Mandelbrot" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode mandelbrot -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Mountain" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode mountain"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Sierpinski" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode sierpinski"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Strange" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode strange"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Thornbird" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode thornbird"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Triangle" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode triangle"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Turtle" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode turtle"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Vines" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode vines"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Fractal" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allfractal -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Apollonian" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode apollonian"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Braid" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode braid"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Fadeplot" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode fadeplot"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Helix" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode helix -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Hyper" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode hyper"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Ico" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode ico"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Kaleid" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode kaleid"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Laser" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode laser"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Lisa" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode lisa"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Lissie" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode lissie"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Penrose" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode penrose +ammann"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Penrose Ammann" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode penrose -ammann"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Petal" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode petal"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Polyominoes" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode polyominoes"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Qix" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode qix +complete"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Qix complete" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode qix -complete"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Rotor" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode rotor"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Shape" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode shape"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Sphere" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode sphere"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Spiral" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode spiral"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Spline" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode spline"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Tik_Tak" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode tik_tak"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Toneclock" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode toneclock"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Geometry" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allgeometry"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Bouboule" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode bouboule +use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Bouboule3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode bouboule -use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Galaxy" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode galaxy"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Grav" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode grav +trail +decay"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Grav Trail" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode grav -trail"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Grav Decay" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode grav -decay"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Rock" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode star -rock"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Scooter" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode scooter"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Space" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode space"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Star" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode star +rock +use3d +trek 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Star3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode star -use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Star Trek" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode star -trek 100"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="World" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode world"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Space" \
+	title="Random Space" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allspace"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Anemone" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode anemone"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Ball" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode ball"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Blot" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode blot"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Bounce" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode bounce"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Bubble" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode bubble"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Clock" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode clock"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Crystal" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode crystal"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Daisy" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode daisy"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Dclock" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode dclock"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Decay" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode decay"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Deco" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode deco"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Deluxe" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode deluxe"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Eyes" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode eyes +trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Eyesptr" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode eyes -trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Fiberlamp" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode fiberlamp"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Fzort" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode fzort"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Goop" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode goop"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Juggle" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode juggle"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Marquee" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode marquee"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Matrix" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode matrix"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Munch" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode munch"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Nose" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode nose"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Pacman" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode pacman"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Pyro" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode pyro +use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Pyro3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode pyro -use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Pyro2" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode pyro2"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Rain" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode rain"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Roll" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode roll"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Slip" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode slip"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Solitare" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode solitaire +trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Solitareptr" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode solitaire -trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Starfish" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode starfish -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Swarm" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode swarm +trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Swarmptr" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode swarm -trackmouse"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Swirl" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode swirl -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="T3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode t3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Tetris" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode tetris"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Tube" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode tube -install"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Worm" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode worm +use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Worm3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode worm -use3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Xcl" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode xcl"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Assorted" \
+	title="Xjack" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode xjack"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/XPM" \
+	title="Bat" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode bat"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/XPM" \
+	title="Image" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode image"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/XPM" \
+	title="Flag" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode flag"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/XPM" \
+	title="Life" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode life"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/XPM" \
+	title="Life1d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode life1d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/XPM" \
+	title="Maze" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode maze"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/XPM" \
+	title="Puzzle" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode puzzle"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/XPM" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allxpm -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Atlantis" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode atlantis"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Atunnels" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode atunnels"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Bubble3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode bubble3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Cage" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode cage"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Fire" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode fire"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Gears" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode gears"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="GL-Planet" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode glplanet"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Juggler3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode juggler3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Lament" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode lament"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Moebius" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode moebius"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Molecule" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode molecule"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Morph3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode morph3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Noof" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode noof"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Pipes" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode pipes"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Rubik" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode rubik"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Sballs" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode sballs"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Sierpinski3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode sierpinski3d"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Skewb" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode skewb"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Sproingies" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode sproingies"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Stairs" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode stairs"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Superquadrics" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode superquadrics"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Text3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode text3d -message \"$LOGNAME\""
+?package(xlockmore-gl):needs="x11" section="Screen/Save/GLmodes" \
+	title="Random" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allgl -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/MarqueeMessage" \
+	title="Brilliant!" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode marquee -message \"WOW! $LOGNAME, You're Brilliant!\""
+?package(xlockmore-gl):needs="x11" section="Screen/Save/MarqueeMessage" \
+	title="Love You" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode marquee -message \"You know, I Love You $LOGNAME.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Save/MarqueeMessage" \
+	title="Available" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode marquee -message \"Hey, I'm available now!\""
+?package(xlockmore-gl):needs="x11" section="Screen/Save/NoseMessage" \
+	title="Brilliant!" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode nose -message \"WOW! $LOGNAME, You're Brilliant!\""
+?package(xlockmore-gl):needs="x11" section="Screen/Save/NoseMessage" \
+	title="Love You" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode nose -message \"You know, I Love You $LOGNAME.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Save/NoseMessage" \
+	title="Available" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode nose -message \"Hey, I'm available now!\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XjackMessage" \
+	title="Crazy Boy" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode xjack -message \"All work and no play makes $LOGNAME a dull boy.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Lock/XjackMessage" \
+	title="Crazy Girl" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode xjack -message \"All work and no play makes $LOGNAME a dull girl.\""
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Special" \
+	title="Blank" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode blank"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Special" \
+	title="Bomb" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode bomb"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Special" \
+	title="Random nice" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allnice -fullrandom -neighbors 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Special" \
+	title="Random standard" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist all-allgl -fullrandom -neighbors 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Special" \
+	title="Random all" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist all -fullrandom -neighbors 0"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Special" \
+	title="Random 3d" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist all3d -use3d -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Special" \
+	title="Random ptr" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allmouse -trackmouse -fullrandom"
+?package(xlockmore-gl):needs="x11" section="Screen/Save/Special" \
+	title="Random write" \
+	command="/usr/bin/xlock -remote -nice 19 -nolock -mode random -modelist allwrite -fullrandom"

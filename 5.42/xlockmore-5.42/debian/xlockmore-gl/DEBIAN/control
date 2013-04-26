@@ -1,0 +1,25 @@
+Package: xlockmore-gl
+Source: xlockmore
+Version: 1:5.42-1
+Architecture: amd64
+Maintainer: Michael Stone <mstone@debian.org>
+Installed-Size: 3319
+Depends: libc6 (>= 2.15), libgcc1 (>= 1:4.1.1), libgl1-mesa-glx | libgl1, libglib2.0-0 (>= 2.16.0), libglu1-mesa | libglu1, libgtk2.0-0 (>= 2.24.0), libpam0g (>= 0.99.7.1), libstdc++6 (>= 4.1.1), libx11-6, libxext6, libxinerama1, libxmu6, libxpm4
+Recommends: libpam-modules
+Suggests: fortune
+Conflicts: xlockmore
+Replaces: xlockmore
+Provides: xlockmore
+Section: x11
+Priority: optional
+Description: Lock X11 display until password is entered -- GL version
+ xlock locks the X server till the user enters his/her password at the
+ keyboard.  While xlock is running, all new server connections are
+ refused. The mouse cursor is turned off.  The screen is blanked and a
+ changing pattern is put on the screen. If a key or a mouse button is
+ pressed then the user is prompted for the password of the user who
+ started xlock.
+ .
+ This version is built with graphical modes. The companion package
+ xlockmore does not contain them. This is the only difference between
+ the two packages.

@@ -1,0 +1,23 @@
+#!/bin/sh -e
+
+case "$1" in
+install | upgrade | abort-upgrade)
+	if command -v suidunregister > /dev/null 2>&1 && [ -e /etc/suid.conf ]
+	then
+		suidunregister -s xlockmore /usr/X11R6/bin/xlock > /dev/null 2>&1
+		suidunregister -s xlockmore-gl /usr/X11R6/bin/xlock > /dev/null 2>&1
+	fi
+
+        if [ -f /etc/X11/Xresources/XLock ]
+        then
+                mv /etc/X11/Xresources/XLock /etc/X11/Xresources/xlockmore
+        fi
+
+	;;
+*)
+	echo "$0: incorrect arguments: $*" >&2
+	exit 1
+	;;
+esac
+
+

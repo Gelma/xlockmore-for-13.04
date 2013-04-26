@@ -1,0 +1,152 @@
+This is Debian GNU/Linux's prepackaged version of the 'xlock' utility.
+'xlock' locks the X server until the user enters his/her password at the 
+keyboard. 'xlock' was originally written by Patrick J. Naughton, the 
+'xlockmore' extended version is written and maintained by David A. Bagley.
+Various modes have been contributed by other programmers.
+
+The current debian package maintainer is Michael Stone <mstone@debian.org> and
+is based on the version of xlockmore available at
+ftp://ftp.tux.org/pub/people/david-bagley/xlockmore/xlockmore-5.31.tar.bz2
+This debian package was originally compiled by Dirk Eddelbuettel
+<edd@debian.org> and later maintained by Herbert Xu <herbert@debian.org>.
+
+The man page states the copyright as follows:
+
+       Copyright (c) 1988-91 by Patrick J. Naughton
+       Copyright (c) 1993-2010 by David A. Bagley
+
+       Permission to use, copy, modify, and distribute this soft-
+       ware and its documentation for any purpose and without fee
+       is hereby  granted,  provided  that  the  above  copyright
+       notice  appear  in all copies and that both that copyright
+       notice and this permission  notice  appear  in  supporting
+       documentation.
+       The  original  BSD  daemon  is Copyright (c) 1988 Marshall
+       Kirk McKusick.  All Rights Reserved.
+       DEC,  HP,  IBM,  Linux, SCO, SGI, and Sun icons have their
+       respective copyrights.
+
+
+
+bat.c, bounce.c, maze.c, sphere.c:
+ ******************************************************************************
+ Copyright 1988 by Sun Microsystems, Inc. Mountain View, CA.
+
+ All Rights Reserved
+
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted,
+ provided that the above copyright notice appear in all copies and that
+ both that copyright notice and this permission notice appear in
+ supporting documentation, and that the names of Sun or MIT not be
+ used in advertising or publicity pertaining to distribution of the
+ software without specific prior written permission. Sun and M.I.T.
+ make no representations about the suitability of this software for
+ any purpose. It is provided "as is" without any express or implied warranty.
+
+ SUN DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+ ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ PURPOSE. IN NO EVENT SHALL SUN BE LIABLE FOR ANY SPECIAL, INDIRECT
+ OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+ OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
+ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+ OR PERFORMANCE OF THIS SOFTWARE.
+ *****************************************************************************/
+
+blot.c, helix.c, hyper.c, nose.c, pedal.c, rock.c, shape.c:
+ * Copyright (c) 1992 by Jamie Zawinski
+ *
+ * Permission to use, copy, modify, distribute, and sell this software and its
+ * documentation for any purpose is hereby granted without fee, provided that
+ * the above copyright notice appear in all copies and that both that
+ * copyright notice and this permission notice appear in supporting
+ * documentation.  No representations are made about the suitability of this
+ * software for any purpose.  It is provided "as is" without express or
+ * implied warranty.
+ */
+
+forest.c, laser.c, mountain.c:
+ * Copyright (c) 1995 Pascal Pensa <pensa@aurora.unice.fr>
+ *
+ * Original idea : Guillaume Ramey <ramey@aurora.unice.fr>
+ *
+ * Permission to use, copy, modify, distribute, and sell this software and its
+ * documentation for any purpose is hereby granted without fee, provided that
+ * the above copyright notice appear in all copies and that both that
+ * copyright notice and this permission notice appear in supporting
+ * documentation.  No representations are made about the suitability of this
+ * software for any purpose.  It is provided "as is" without express or
+ * implied warranty.
+
+pedal.c:
+ *  Copyright \(co 1994, by Carnegie Mellon University.  Permission to use,
+ *  copy, modify, distribute, and sell this software and its documentation
+ *  for any purpose is hereby granted without fee, provided fnord that the
+ *  above copyright notice appear in all copies and that both that copyright
+ *  notice and this permission notice appear in supporting documentation.
+ *  No representations are made about the  suitability of fnord this software
+ *  for any purpose.  It is provided "as is" without express or implied
+ *  warranty.
+
+spline.c:
+** xsplinefun.c - X11 version of spline fun #3
+**
+** Displays colorful moving splines in the X11 root window.
+**
+** Copyright (C) 1992 by Jef Poskanzer
+**
+** Permission to use, copy, modify, and distribute this software and its
+** documentation for any purpose and without fee is hereby granted, provided
+** that the above copyright notice appear in all copies and that both that
+** copyright notice and this permission notice appear in supporting
+** documentation.  This software is provided "as is" without express or
+** implied warranty.
+
+xlock.c:
+ * xlock.c - X11 client to lock a display and show a screen saver.
+ *
+ * Copyright (c) 1988-91 by Patrick J. Naughton.
+ *
+ * Permission to use, copy, modify, and distribute this software and its
+ * documentation for any purpose and without fee is hereby granted,
+ * provided that the above copyright notice appear in all copies and that
+ * both that copyright notice and this permission notice appear in
+ * supporting documentation.
+ *
+ * This file is provided AS IS with no warranties of any kind.  The author
+ * shall have no liability with respect to the infringement of copyrights,
+ * trade secrets or any patents by this file or any part thereof.  In no
+ * event will the author be liable for any lost revenue or profits or
+ * other special, indirect and consequential damages.
+
+
+logout.c:
+ * xclosedown code
+ * Copyright 1990 by Janet Carson
+ * Permission to use, copy, modify, and distribute this software and its
+ * documentation for any purpose is hereby granted without fee, provided that
+ * the above copyright notice appear in all copies and that both that
+ * copyright notice and this permission notice appear in supporting
+ * documentation.  The author makes no representations about the
+ * suitability of this software for any purpose.  It is provided "as is"
+ * without express or implied warranty.
+
+Finally, the following files refer to xlock.c for the copyright information:
+braid.c:
+ * Copyright (c) 1995 by John Neil.
+
+clock.c:
+ * Copyright (c) 1995 by Jeremie PETIT <petit@aurora.unice.fr>
+
+geometry.c:
+ * Copyright (c) 1994 by Darrick Brown.
+
+marquee.c:
+ * Copyright (c) 1995 by Tobias Gloth and David Bagley
+
+spiral.c:
+ * Copyright (c) 1994 by Darrick Brown.
+
+world.c:
+ * Copyright (c) 1993 Matthew Moyle-Croft <mmc@cs.adelaide.edu.au>
+

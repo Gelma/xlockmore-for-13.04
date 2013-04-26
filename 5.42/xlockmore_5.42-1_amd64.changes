@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 26 Apr 2013 11:06:02 +0200
+Source: xlockmore
+Binary: xlockmore-gl xlockmore
+Architecture: source amd64
+Version: 1:5.42-1
+Distribution: UNRELEASED
+Urgency: low
+Maintainer: Michael Stone <mstone@debian.org>
+Changed-By: Andrea Gelmini <andrea.gelmini@linux.it>
+Description: 
+ xlockmore  - Lock X11 display until password is entered.
+ xlockmore-gl - Lock X11 display until password is entered -- GL version
+Changes: 
+ xlockmore (1:5.42-1) UNRELEASED; urgency=low
+ .
+   * Quick&dirty rebuild for Ubuntu 13.04:
+    * took latest xlockmore sources from http://www.tux.org/~bagleyd/xlock/xlockmore-5.42/
+    * took debian/ from https://launchpad.net/ubuntu/quantal/+source/xlockmore/1:5.31-1.1
+    * recompiled
+Checksums-Sha1: 
+ 85f319a3937ee3f2cb227e480dd9b935a9ba3a9b 965 xlockmore_5.42-1.dsc
+ 622a062dc2da459be70830ef8721c91f657b6dd5 2376465 xlockmore_5.42-1.tar.gz
+ 8315abb747fdbdd55900a9c6661b6e46bdde5c1b 1289942 xlockmore-gl_5.42-1_amd64.deb
+ 431ca168512a7da58168ca6362fb4f99a34f6860 242916 xlockmore_5.42-1_amd64.deb
+Checksums-Sha256: 
+ 4337ad0bf8e84a5041de4e1070c3d8a14770d37f5617ea5274f4efeac07d4652 965 xlockmore_5.42-1.dsc
+ c4fd304b683581363d6bb7a077c0940d711ef226ca4018e0e208df9fea7e2047 2376465 xlockmore_5.42-1.tar.gz
+ cebe9376c90d79e1869f6dc17fb3c33f4a38daf2e7b68f751449edfbce272b9a 1289942 xlockmore-gl_5.42-1_amd64.deb
+ 81ba6b2aa16135dca3059b042641e875dc9f205b59d467519256880f6fe3fa4c 242916 xlockmore_5.42-1_amd64.deb
+Files: 
+ d00eb0980984d41c9d47f19906e60925 965 x11 optional xlockmore_5.42-1.dsc
+ d9e8895c2cac051a769cc65578a549ff 2376465 x11 optional xlockmore_5.42-1.tar.gz
+ 4770f09edfefb321d7f84b19810cb3f5 1289942 x11 optional xlockmore-gl_5.42-1_amd64.deb
+ 6e8a56a2738f2d9e54fe53f5b1c85219 242916 x11 extra xlockmore_5.42-1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.12 (GNU/Linux)
+
+iEYEARECAAYFAlF6SUIACgkQVqoJ9UdagBcpjACgh2fBq7q8YqLLNTiooLqlS3dz
+EqkAoIZ6bqwHcYAHx0RwPo3G2dA37cx2
+=a0T8
+-----END PGP SIGNATURE-----

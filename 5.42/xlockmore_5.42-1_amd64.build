@@ -1,0 +1,1595 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package xlockmore
+dpkg-buildpackage: source version 1:5.42-1
+dpkg-buildpackage: source changed by Andrea Gelmini <andrea.gelmini@linux.it>
+ dpkg-source --before-build xlockmore-5.42
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dpatch deapply-all
+rm -rf patch-stamp debian-patched
+dh_testdir
+dh_testroot
+rm -f build-stamp
+if [ -f Makefile ]; then /usr/bin/make clean; fi
+make[1]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+rm -f core *~ *% *.bak *.orig *.rej make.log MakeOut *.patch
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+rm -f *.o core *~ *% *.bak *.orig *.rej *.patch
+rm -f make.log MakeOut memdiag.xlock-* Makefile.dep
+rm -f xlock._man xlock.1.html
+rm -f xlock xlock.exe
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+rm -f *.o *.xlk core *~ *% *.bak *.orig *.rej *.patch .pure
+rm -f make.log MakeOut Makefile.dep
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+rm -f *.o *.xlk core *~ *% *.bak *.orig *.rej *.patch *.pure
+rm -f make.log MakeOut Makefile.dep
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+rm -f *.o core *~ *% *.bak *.orig *.rej *.patch .pure
+rm -f make.log MakeOut Makefile.dep
+rm -f xmlock xmlock.exe
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+rm -f *.o core *~ *% *.bak *.orig *.rej make.log MakeOut *.patch .pure
+rm -f xglock xglock.exe
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+make[1]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+rm -f debian/xlock
+rm -f debian/menu debian/xlockmore.menu
+rm -rf debian/xlockmore-gl
+rm -rf debian/xlockmore
+rm -f modes/*.x?m
+dh_clean
+ dpkg-source -b xlockmore-5.42
+dpkg-source: warning: no source format specified in debian/source/format, see dpkg-source(1)
+dpkg-source: info: using source format `1.0'
+dpkg-source: info: building xlockmore in xlockmore_5.42-1.tar.gz
+dpkg-source: info: building xlockmore in xlockmore_5.42-1.dsc
+ debian/rules build
+dpatch apply-all
+dpatch cat-all > patch-stamp
+touch patch-stamp
+dh_testdir
+./configure \
+		--prefix=/usr \
+		--mandir=/share/man \
+		--without-xpm  \
+		--without-mesa \
+		--without-opengl \
+		--without-motif \
+		--without-dtsaver \
+		--without-rplay \
+		--without-nas \
+		--without-esound \
+		--without-ttf \
+		--without-gltt \
+		--without-gtk \
+		--without-freetype \
+		--enable-flagtype=debian \
+		--enable-button-logout=-1 \
+		--enable-staff-file=/etc/xlock.staff \
+		--enable-syslog \
+		--enable-allowroot \
+		--enable-pam --enable-bad-pam --enable-blank-only
+configure: WARNING: unrecognized options: --enable-flagtype, --enable-allowroot
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+Turning on GNU compiler warnings.
+checking whether ln -s works... yes
+checking how to run the C preprocessor... gcc -Wnested-externs -Wno-format -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether make sets $(MAKE)... yes
+checking test -h... -h
+checking for library containing strerror... none required
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking for memory.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for an ANSI C-conforming const... yes
+checking for mode_t... yes
+checking for uid_t in sys/types.h... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for getenv declaration... yes
+checking for gethostname... yes
+checking for select... yes
+checking for strdup... yes
+checking for setpriority... yes
+checking for vfork... yes
+checking for seteuid... yes
+checking for X... libraries , headers 
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... yes
+checking for X app-defaults directory... /usr/lib/X11/app-defaults
+checking for Motif... no
+checking for Editres... libraries , headers /usr/include
+checking for XPM... no
+checking for MAGICK... no Magick-config
+checking for GLTT... no
+checking for TTF... no
+checking for FTGL... no
+checking for FREETYPE2... no
+checking for OpenGL (OK if this is Mesa)... no
+checking for Mesa... no
+checking for GL >=1.1... yes
+checking for DtSaver... no
+checking for EXT... libraries , headers /usr/include
+checking for DPMS... libraries , headers /usr/include
+checking for XINERAMA... libraries , headers /usr/include
+checking for RPLAY... no
+checking for ESOUND... no
+checking for NAS... no
+checking for CRYPT... no
+checking for pkg-config... /usr/bin/pkg-config
+checking for gtk+-2.0... 2.24.17
+checking elf.h usability... yes
+checking elf.h presence... yes
+checking for elf.h... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for usleep... yes
+checking how to call gettimeofday... two arguments
+checking for tzset... yes
+checking for timelocal... yes
+checking for inline... inline
+checking for srand48... yes
+checking for srand48 declaration... yes
+checking matherr support... yes
+checking struct sigset_t... no
+checking whether wchar_t is defined internal to C++... no
+defining option USE_VROOT
+defining option ALWAYS_ALLOW_ROOT
+defining option USE_SYSLOG
+Warning: Illegal time value "-1" given
+defining option USE_BUTTON_LOGOUT = 10 minutes
+defining option USE_BOMB
+defining option STAFF_FILE = "/etc/xlock.staff"
+defining option USE_PAM
+checking for dlsym... no
+defining option BAD_PAM
+defining option USE_MB
+enabling blank mode only
+using default language (English)
+defining install options (setuid/setgid) = "-s -g shadow -m 2111"
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating xlock/Makefile
+config.status: creating modes/Makefile
+config.status: creating modes/glx/Makefile
+config.status: creating xmlock/Makefile
+config.status: creating xglock/Makefile
+config.status: creating config.h
+configure: WARNING: unrecognized options: --enable-flagtype, --enable-allowroot
+CFLAGS='-DDEBUG' /usr/bin/make
+make[1]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g xlock.c
+xlock.c: In function ‘finish’:
+xlock.c:1493:2: warning: ignoring return value of ‘nice’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) nice(0);
+  ^
+xlock.c: In function ‘main’:
+xlock.c:3312:2: warning: ignoring return value of ‘setegid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) setegid(rgid);
+  ^
+xlock.c:3313:2: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) seteuid(ruid);
+  ^
+xlock.c:3347:2: warning: ignoring return value of ‘setegid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) setegid(egid);
+  ^
+xlock.c:3348:2: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) seteuid(euid);
+  ^
+xlock.c:3390:7: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+       (void) seteuid(ruid);
+       ^
+xlock.c:3989:2: warning: ignoring return value of ‘nice’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) nice(nicelevel);
+  ^
+xlock.c:4017:4: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+    (void) system(startCmd);
+    ^
+xlock.c:4056:4: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+    (void) system(endCmd);
+    ^
+xlock.c: In function ‘getPassword’:
+xlock.c:2330:2: warning: ignoring return value of ‘nice’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) nice(0);
+  ^
+xlock.c:2802:2: warning: ignoring return value of ‘nice’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) nice(nicelevel);
+  ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g passwd.c
+passwd.c: In function ‘checkPasswd’:
+passwd.c:1188:2: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) seteuid(0); /* temporarily go to root so that pam can get shadow password */
+  ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1195:2: note: in expansion of macro ‘PAM_BAIL’
+  PAM_BAIL;
+  ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1200:3: note: in expansion of macro ‘PAM_BAIL’
+   PAM_BAIL;
+   ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1209:6: note: in expansion of macro ‘PAM_BAIL’
+      PAM_BAIL;
+      ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1214:3: note: in expansion of macro ‘PAM_BAIL’
+   PAM_BAIL;
+   ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1216:3: note: in expansion of macro ‘PAM_BAIL’
+   PAM_BAIL;
+   ^
+passwd.c:1219:2: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) seteuid(ruid); /* back to user's privileges */
+  ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1232:2: note: in expansion of macro ‘PAM_BAIL’
+  PAM_BAIL;
+  ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1235:2: note: in expansion of macro ‘PAM_BAIL’
+  PAM_BAIL;
+  ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g resource.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g parsecmd.c
+parsecmd.c: In function ‘XlockrmParseCommand’:
+parsecmd.c:247:25: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    register int j = 1 + (int) options[i].value;
+                         ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g util.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g logout.c
+logout.c: In function ‘logoutUser’:
+logout.c:396:4: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+    (void) system(logoutCmd);
+    ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g mode.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g xlockimage.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g ras.c
+ras.c: In function ‘RasterFileToImage’:
+ras.c:67:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) fread((void *) xlockimage.header, 8, 4, file);
+  ^
+ras.c:115:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) fread((void *) xlockimage.color, (int) xlockimage.colors, 3, file);
+  ^
+ras.c:116:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) fread((void *) rasdata, read_width, (int) xlockimage.height, file);
+  ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g xbm.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g vis.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g visgl.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g color.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g random.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g iostuff.c
+iostuff.c: In function ‘getWords’:
+iostuff.c:855:7: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+       (void) fgets(p, BUFSIZ - strlen(&buf[screen * BUFSIZ]), pp);
+       ^
+iostuff.c:857:7: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+       (void) fgets(p, BUFSIZ - strlen(&buf[screen * BUFSIZ]), pp);
+       ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g automata.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g spline.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g sound.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g erase.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g magick.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g vtlock.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -O2 -g vtlock_proc.c
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: Nessuna operazione da eseguire per "all".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g anemone.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g ant.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g ant3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g apollonian.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g ball.c
+rm -f bat.xbm ; ln -s ../bitmaps/l-xlock.xbm bat.xbm
+rm -f bat.xpm ; ln -s ../pixmaps/l-xlock.xpm bat.xpm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g bat.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g blot.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g bouboule.c
+rm -f bounce.xbm ; ln -s ../bitmaps/l-xlock.xbm bounce.xbm
+rm -f bounce.xpm ; ln -s ../pixmaps/l-xlock.xpm bounce.xpm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g bounce.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g braid.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g bubble.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g bug.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g clock.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g coral.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g crystal.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g daisy.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g dclock.c
+rm -f decay.xbm ; ln -s ../bitmaps/l-xlock.xbm decay.xbm
+rm -f decay.xpm ; ln -s ../pixmaps/l-xlock.xpm decay.xpm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g decay.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g deco.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g deluxe.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g demon.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g dilemma.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g discrete.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g dragon.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g drift.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g euler2d.c
+rm -f eyes.xbm ; ln -s ../bitmaps/m-grelb.xbm eyes.xbm
+rm -f eyes2.xbm ; ln -s ../bitmaps/m-grelb-2.xbm eyes2.xbm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g eyes.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g fadeplot.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g fiberlamp.c
+rm -f flag.xbm ; ln -s ../bitmaps/m-linux.xbm flag.xbm
+rm -f flag.xpm ; ln -s ../pixmaps/m-linux.xpm flag.xpm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g flag.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g flame.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g flow.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g forest.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g fzort.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g galaxy.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g goop.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g grav.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g helix.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g hop.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g hyper.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g ico.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g ifs.c
+rm -f image.xbm ; ln -s ../bitmaps/m-linux.xbm image.xbm
+rm -f image.xpm ; ln -s ../pixmaps/m-linux.xpm image.xpm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g image.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g juggle.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g julia.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g kaleid.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g kumppa.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g laser.c
+rm -f life.xbm ; ln -s ../bitmaps/s-grelb.xbm life.xbm
+rm -f life2.xbm ; ln -s ../bitmaps/s-grelb-2.xbm life2.xbm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g life.c
+rm -f life1d.xbm ; ln -s ../bitmaps/t-x11.xbm life1d.xbm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g life1d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g life3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g lightning.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g lisa.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g lissie.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g loop.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g lyapunov.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g mandelbrot.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g marquee.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g matrix.c
+rm -f maze.xbm ; ln -s ../bitmaps/l-linux.xbm maze.xbm
+rm -f maze.xpm ; ln -s ../pixmaps/m-linux.xpm maze.xpm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g maze.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g mountain.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g munch.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g nose.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g pacman.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g penrose.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g petal.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g petri.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g polyominoes.c
+rm -f puzzle.xbm ; ln -s ../bitmaps/l-xlock.xbm puzzle.xbm
+rm -f puzzle.xpm ; ln -s ../pixmaps/l-xlock.xpm puzzle.xpm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g puzzle.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g pyro.c
+rm -f pyro2.xbm ; ln -s ../bitmaps/l-xlock.xbm pyro2.xbm
+rm -f pyro2.xpm ; ln -s ../pixmaps/l-xlock.xpm pyro2.xpm
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g pyro2.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g qix.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g rain.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g roll.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g rotor.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g scooter.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g shape.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g sierpinski.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g slip.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g space.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g sphere.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g spiral.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g spline.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g star.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g starfish.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g strange.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g swarm.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g swirl.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g t3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g tetris.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g thornbird.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g tik_tak.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g toneclock.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g triangle.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g tube.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g turtle.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g vines.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g voters.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g wator.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g wire.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g world.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g worm.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g xcl.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g xjack.c
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -march=native solitaire.cc
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g bomb.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g blank.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -O2 -g random.c
+g++ -march=native -o ../xlock/xlock ../xlock/xlock.o ../xlock/passwd.o ../xlock/resource.o ../xlock/parsecmd.o  ../xlock/util.o ../xlock/logout.o ../xlock/mode.o ../xlock/xlockimage.o ../xlock/ras.o ../xlock/xbm.o  ../xlock/vis.o ../xlock/visgl.o ../xlock/color.o ../xlock/random.o ../xlock/iostuff.o ../xlock/automata.o  ../xlock/spline.o ../xlock/sound.o ../xlock/erase.o ../xlock/magick.o  ../xlock/vtlock.o ../xlock/vtlock_proc.o  anemone.o ant.o ant3d.o apollonian.o  ball.o bat.o blot.o  bouboule.o bounce.o braid.o bubble.o bug.o  clock.o coral.o crystal.o  daisy.o dclock.o decay.o deco.o deluxe.o demon.o  dilemma.o discrete.o dragon.o drift.o euler2d.o eyes.o  fadeplot.o fiberlamp.o flag.o flame.o flow.o forest.o  fzort.o galaxy.o goop.o grav.o  helix.o hop.o hyper.o  ico.o ifs.o image.o juggle.o julia.o kaleid.o kumppa.o  laser.o life.o life1d.o life3d.o  lightning.o lisa.o lissie.o loop.o lyapunov.o  mandelbrot.o marquee.o matrix.o maze.o  mountain.o munch.o nose.o  pacman.o penrose.o petal.o petri.o  polyominoes.o puzzle.o pyro.o pyro2.o  qix.o rain.o roll.o rotor.o  scooter.o shape.o sierpinski.o slip.o  space.o sphere.o spiral.o spline.o  star.o starfish.o strange.o swarm.o swirl.o  t3d.o tetris.o thornbird.o tik_tak.o toneclock.o  triangle.o tube.o turtle.o  vines.o voters.o  wator.o wire.o world.o worm.o xcl.o xjack.o   solitaire.o     bomb.o blank.o random.o        -lSM -lICE   -lXmu -lXinerama -lpam -ldl -lX11 -lXext -lm -lcrypt 
+../xlock/xlock BUILD COMPLETE
+
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: Nessuna operazione da eseguire per "all".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H  -DXGLOCKRC_FILE=\"/usr/share/xlock/xglockrc\" -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/harfbuzz   -I.. -I.. -O2 -g xglock.c
+xglock.c: In function ‘bool_option_clicked_cb’:
+xglock.c:595:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     guint optnr =(guint)udata;
+                  ^
+xglock.c: In function ‘mode_list_item_select_cb’:
+xglock.c:624:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     gint mode =(gint)mode_nr;
+                ^
+In file included from /usr/include/gtk-2.0/gtk/gtkcalendar.h:40:0,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:53,
+                 from xglock.c:64:
+xglock.c: In function ‘create_boolOptions_buttons’:
+xglock.c:1515:28: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+                            (gpointer)i);
+                            ^
+/usr/include/gtk-2.0/gtk/gtksignal.h:49:62: note: in definition of macro ‘gtk_signal_connect’
+    gtk_signal_connect_full ((object), (name), (func), NULL, (func_data), NULL, 0, 0)
+                                                              ^
+gcc -Wnested-externs -Wno-format -o xglock xglock.o -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0   
+xglock BUILD COMPLETE
+
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+make[1]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+cp xlock/xlock debian
+CFLAGS='-DDEBUG' /usr/bin/make -i clean
+make[1]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+rm -f core *~ *% *.bak *.orig *.rej make.log MakeOut *.patch
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+rm -f *.o core *~ *% *.bak *.orig *.rej *.patch
+rm -f make.log MakeOut memdiag.xlock-* Makefile.dep
+rm -f xlock._man xlock.1.html
+rm -f xlock xlock.exe
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+rm -f *.o *.xlk core *~ *% *.bak *.orig *.rej *.patch .pure
+rm -f make.log MakeOut Makefile.dep
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+rm -f *.o *.xlk core *~ *% *.bak *.orig *.rej *.patch *.pure
+rm -f make.log MakeOut Makefile.dep
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+rm -f *.o core *~ *% *.bak *.orig *.rej *.patch .pure
+rm -f make.log MakeOut Makefile.dep
+rm -f xmlock xmlock.exe
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+rm -f *.o core *~ *% *.bak *.orig *.rej make.log MakeOut *.patch .pure
+rm -f xglock xglock.exe
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+make[1]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+rm -f config.h config.log config.status config.cache
+./configure \
+		--prefix=/usr \
+		--mandir=/share/man \
+		--with-xpm  \
+		--with-mesa \
+		--with-opengl \
+		--without-motif \
+		--without-dtsaver \
+		--without-rplay \
+		--without-nas \
+		--without-esound \
+		--without-ttf \
+		--without-gltt \
+		--without-freetype \
+		--without-ftgl \
+		--without-gtk \
+		--enable-flagtype=debian \
+		--enable-button-logout=-1 \
+		--enable-staff-file=/etc/xlock.staff \
+		--enable-syslog \
+		--enable-allowroot \
+		--enable-pam --enable-bad-pam
+configure: WARNING: unrecognized options: --enable-flagtype, --enable-allowroot
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+Turning on GNU compiler warnings.
+checking whether ln -s works... yes
+checking how to run the C preprocessor... gcc -Wnested-externs -Wno-format -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether make sets $(MAKE)... yes
+checking test -h... -h
+checking for library containing strerror... none required
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking for memory.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for an ANSI C-conforming const... yes
+checking for mode_t... yes
+checking for uid_t in sys/types.h... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for getenv declaration... yes
+checking for gethostname... yes
+checking for select... yes
+checking for strdup... yes
+checking for setpriority... yes
+checking for vfork... yes
+checking for seteuid... yes
+checking for X... libraries , headers 
+checking for gethostbyname... yes
+checking for connect... yes
+checking for remove... yes
+checking for shmat... yes
+checking for IceConnectionNumber in -lICE... yes
+checking for X app-defaults directory... /usr/lib/X11/app-defaults
+checking for Motif... no
+checking for Editres... libraries , headers /usr/include
+checking for XPM... libraries , headers /usr/include
+checking for MAGICK... no Magick-config
+checking for GLTT... no
+checking for TTF... no
+checking for FTGL... no
+checking for FREETYPE2... no
+checking for OpenGL (OK if this is Mesa)... libraries , headers /usr/include
+checking for Mesa... ignored - using OpenGL
+checking for GL >=1.1... yes
+checking for DtSaver... no
+checking for EXT... libraries , headers /usr/include
+checking for DPMS... libraries , headers /usr/include
+checking for XINERAMA... libraries , headers /usr/include
+checking for RPLAY... no
+checking for ESOUND... no
+checking for NAS... no
+checking for CRYPT... no
+checking for pkg-config... /usr/bin/pkg-config
+checking for gtk+-2.0... 2.24.17
+checking elf.h usability... yes
+checking elf.h presence... yes
+checking for elf.h... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for usleep... yes
+checking how to call gettimeofday... two arguments
+checking for tzset... yes
+checking for timelocal... yes
+checking for inline... inline
+checking for srand48... yes
+checking for srand48 declaration... yes
+checking matherr support... yes
+checking struct sigset_t... no
+checking whether wchar_t is defined internal to C++... no
+defining option USE_VROOT
+defining option ALWAYS_ALLOW_ROOT
+defining option USE_SYSLOG
+Warning: Illegal time value "-1" given
+defining option USE_BUTTON_LOGOUT = 10 minutes
+defining option USE_BOMB
+defining option STAFF_FILE = "/etc/xlock.staff"
+defining option USE_PAM
+checking for dlsym... no
+defining option BAD_PAM
+defining option USE_MB
+using default language (English)
+defining install options (setuid/setgid) = "-s -g shadow -m 2111"
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating xlock/Makefile
+config.status: creating modes/Makefile
+config.status: creating modes/glx/Makefile
+config.status: creating xmlock/Makefile
+config.status: creating xglock/Makefile
+config.status: creating config.h
+configure: WARNING: unrecognized options: --enable-flagtype, --enable-allowroot
+/usr/bin/make
+make[1]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g xlock.c
+xlock.c: In function ‘finish’:
+xlock.c:1493:2: warning: ignoring return value of ‘nice’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) nice(0);
+  ^
+xlock.c: In function ‘main’:
+xlock.c:3312:2: warning: ignoring return value of ‘setegid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) setegid(rgid);
+  ^
+xlock.c:3313:2: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) seteuid(ruid);
+  ^
+xlock.c:3347:2: warning: ignoring return value of ‘setegid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) setegid(egid);
+  ^
+xlock.c:3348:2: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) seteuid(euid);
+  ^
+xlock.c:3390:7: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+       (void) seteuid(ruid);
+       ^
+xlock.c:3989:2: warning: ignoring return value of ‘nice’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) nice(nicelevel);
+  ^
+xlock.c:4017:4: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+    (void) system(startCmd);
+    ^
+xlock.c:4056:4: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+    (void) system(endCmd);
+    ^
+xlock.c: In function ‘getPassword’:
+xlock.c:2330:2: warning: ignoring return value of ‘nice’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) nice(0);
+  ^
+xlock.c:2802:2: warning: ignoring return value of ‘nice’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) nice(nicelevel);
+  ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g passwd.c
+passwd.c: In function ‘checkPasswd’:
+passwd.c:1188:2: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) seteuid(0); /* temporarily go to root so that pam can get shadow password */
+  ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1195:2: note: in expansion of macro ‘PAM_BAIL’
+  PAM_BAIL;
+  ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1200:3: note: in expansion of macro ‘PAM_BAIL’
+   PAM_BAIL;
+   ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1209:6: note: in expansion of macro ‘PAM_BAIL’
+      PAM_BAIL;
+      ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1214:3: note: in expansion of macro ‘PAM_BAIL’
+   PAM_BAIL;
+   ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1216:3: note: in expansion of macro ‘PAM_BAIL’
+   PAM_BAIL;
+   ^
+passwd.c:1219:2: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) seteuid(ruid); /* back to user's privileges */
+  ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1232:2: note: in expansion of macro ‘PAM_BAIL’
+  PAM_BAIL;
+  ^
+passwd.c:1178:31: warning: ignoring return value of ‘seteuid’, declared with attribute warn_unused_result [-Wunused-result]
+ #define BAD_PAM_SETUID seteuid(ruid);
+                               ^
+passwd.c:1184:31: note: in expansion of macro ‘BAD_PAM_SETUID’
+     pam_end(pamh, pam_error); BAD_PAM_SETUID return False; \
+                               ^
+passwd.c:1235:2: note: in expansion of macro ‘PAM_BAIL’
+  PAM_BAIL;
+  ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g resource.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g parsecmd.c
+parsecmd.c: In function ‘XlockrmParseCommand’:
+parsecmd.c:247:25: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    register int j = 1 + (int) options[i].value;
+                         ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g util.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g logout.c
+logout.c: In function ‘logoutUser’:
+logout.c:396:4: warning: ignoring return value of ‘system’, declared with attribute warn_unused_result [-Wunused-result]
+    (void) system(logoutCmd);
+    ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g mode.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g xlockimage.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g ras.c
+ras.c: In function ‘RasterFileToImage’:
+ras.c:67:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) fread((void *) xlockimage.header, 8, 4, file);
+  ^
+ras.c:115:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) fread((void *) xlockimage.color, (int) xlockimage.colors, 3, file);
+  ^
+ras.c:116:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  (void) fread((void *) rasdata, read_width, (int) xlockimage.height, file);
+  ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g xbm.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g vis.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g visgl.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g color.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g random.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g iostuff.c
+iostuff.c: In function ‘getWords’:
+iostuff.c:855:7: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+       (void) fgets(p, BUFSIZ - strlen(&buf[screen * BUFSIZ]), pp);
+       ^
+iostuff.c:857:7: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+       (void) fgets(p, BUFSIZ - strlen(&buf[screen * BUFSIZ]), pp);
+       ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g automata.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g spline.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g sound.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g erase.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g magick.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g vtlock.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g vtlock_proc.c
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g cage.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g gears.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g moebius.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g morph3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g noof.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g rubik.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g sierpinski3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g skewb.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g stairs.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g superquadrics.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g xpm-ximage.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g pipeobjs.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g buildlwo.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g sproingiewrap.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g s1_b.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g s1_1.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g s1_2.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g s1_3.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g s1_4.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g s1_5.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g s1_6.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g dolphin.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g shark.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g swim.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g whale.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g tunnel_draw.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g b_draw.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g b_sphere.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g b_lockglue.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g tube.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g sphere.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g rotator.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g glxfonts.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g gltrackball.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g trackball.c
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native i_figureeight.cc
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native i_linkage.cc
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native i_sphere.cc
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native i_spline.cc
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native i_threejet.cc
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native i_threejetvec.cc
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native i_twojet.cc
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native i_twojetvec.cc
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g fire.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g lament.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g sballs.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g molecule.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g pipes.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g sproingies.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g atlantis.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g atunnels.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g bubble3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g glplanet.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g juggler3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\" -I. -I.. -I../.. -I../../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g invert.c
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g anemone.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g ant.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g ant3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g apollonian.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g ball.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g bat.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g blot.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g bouboule.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g bounce.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g braid.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g bubble.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g bug.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g clock.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g coral.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g crystal.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g daisy.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g dclock.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g decay.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g deco.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g deluxe.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g demon.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g dilemma.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g discrete.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g dragon.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g drift.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g euler2d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g eyes.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g fadeplot.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g fiberlamp.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g flag.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g flame.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g flow.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g forest.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g fzort.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g galaxy.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g goop.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g grav.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g helix.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g hop.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g hyper.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g ico.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g ifs.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g image.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g juggle.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g julia.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g kaleid.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g kumppa.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g laser.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g life.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g life1d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g life3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g lightning.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g lisa.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g lissie.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g loop.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g lyapunov.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g mandelbrot.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g marquee.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g matrix.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g maze.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g mountain.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g munch.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g nose.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g pacman.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g penrose.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g petal.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g petri.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g polyominoes.c
+polyominoes.c: In function ‘init_polyominoes’:
+polyominoes.c:1505:28: warning: iteration 12u invokes undefined behavior [-Waggressive-loop-optimizations]
+     one_sided_pentomino[j] = pentomino[i];
+                            ^
+polyominoes.c:1504:3: note: containing loop
+   for (i=0;i<18;i++) {
+   ^
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g puzzle.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g pyro.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g pyro2.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g qix.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g rain.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g roll.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g rotor.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g scooter.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g shape.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g sierpinski.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g slip.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g space.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g sphere.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g spiral.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g spline.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g star.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g starfish.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g strange.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g swarm.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g swirl.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g t3d.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g tetris.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g thornbird.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g tik_tak.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g toneclock.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g triangle.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g tube.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g turtle.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g vines.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g voters.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g wator.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g wire.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g world.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g worm.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g xcl.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g xjack.c
+g++ -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -march=native solitaire.cc
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g bomb.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g blank.c
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H -DDEF_FILESEARCHPATH=\"/usr/lib/X11/app-defaults/%N%C%S:/usr/lib/X11/app-defaults/%N%S\"   -I. -I.. -I.. -I../xlock/ -I../..  -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include -O2 -g random.c
+g++ -march=native -o ../xlock/xlock ../xlock/xlock.o ../xlock/passwd.o ../xlock/resource.o ../xlock/parsecmd.o  ../xlock/util.o ../xlock/logout.o ../xlock/mode.o ../xlock/xlockimage.o ../xlock/ras.o ../xlock/xbm.o  ../xlock/vis.o ../xlock/visgl.o ../xlock/color.o ../xlock/random.o ../xlock/iostuff.o ../xlock/automata.o  ../xlock/spline.o ../xlock/sound.o ../xlock/erase.o ../xlock/magick.o  ../xlock/vtlock.o ../xlock/vtlock_proc.o  anemone.o ant.o ant3d.o apollonian.o  ball.o bat.o blot.o  bouboule.o bounce.o braid.o bubble.o bug.o  clock.o coral.o crystal.o  daisy.o dclock.o decay.o deco.o deluxe.o demon.o  dilemma.o discrete.o dragon.o drift.o euler2d.o eyes.o  fadeplot.o fiberlamp.o flag.o flame.o flow.o forest.o  fzort.o galaxy.o goop.o grav.o  helix.o hop.o hyper.o  ico.o ifs.o image.o juggle.o julia.o kaleid.o kumppa.o  laser.o life.o life1d.o life3d.o  lightning.o lisa.o lissie.o loop.o lyapunov.o  mandelbrot.o marquee.o matrix.o maze.o  mountain.o munch.o nose.o  pacman.o penrose.o petal.o petri.o  polyominoes.o puzzle.o pyro.o pyro2.o  qix.o rain.o roll.o rotor.o  scooter.o shape.o sierpinski.o slip.o  space.o sphere.o spiral.o spline.o  star.o starfish.o strange.o swarm.o swirl.o  t3d.o tetris.o thornbird.o tik_tak.o toneclock.o  triangle.o tube.o turtle.o  vines.o voters.o  wator.o wire.o world.o worm.o xcl.o xjack.o   solitaire.o   glx/cage.o glx/gears.o  glx/moebius.o glx/morph3d.o glx/noof.o glx/rubik.o  glx/sierpinski3d.o glx/skewb.o glx/stairs.o glx/superquadrics.o       bomb.o blank.o random.o  glx/xpm-ximage.o glx/pipeobjs.o  glx/buildlwo.o glx/sproingiewrap.o glx/s1_b.o  glx/s1_1.o glx/s1_2.o glx/s1_3.o glx/s1_4.o glx/s1_5.o glx/s1_6.o glx/dolphin.o glx/shark.o glx/swim.o glx/whale.o glx/tunnel_draw.o  glx/b_draw.o glx/b_sphere.o glx/b_lockglue.o glx/tube.o glx/sphere.o glx/rotator.o  glx/glxfonts.o glx/gltrackball.o glx/trackball.o glx/i_figureeight.o  glx/i_linkage.o glx/i_sphere.o glx/i_spline.o  glx/i_threejet.o glx/i_threejetvec.o  glx/i_twojet.o glx/i_twojetvec.o glx/fire.o glx/lament.o glx/sballs.o glx/molecule.o  glx/pipes.o glx/sproingies.o glx/atlantis.o glx/atunnels.o  glx/bubble3d.o glx/glplanet.o glx/juggler3d.o glx/invert.o     -lSM -lICE   -lXmu -lXpm -lGL -lGLU -lXinerama -lpam -ldl -lX11 -lXext -lm -lcrypt 
+../xlock/xlock BUILD COMPLETE
+
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: Nessuna operazione da eseguire per "all".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+gcc -Wnested-externs -Wno-format -c  -DHAVE_CONFIG_H  -DXGLOCKRC_FILE=\"/usr/share/xlock/xglockrc\" -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/harfbuzz   -I.. -I.. -O2 -g xglock.c
+xglock.c: In function ‘bool_option_clicked_cb’:
+xglock.c:595:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     guint optnr =(guint)udata;
+                  ^
+xglock.c: In function ‘mode_list_item_select_cb’:
+xglock.c:624:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     gint mode =(gint)mode_nr;
+                ^
+In file included from /usr/include/gtk-2.0/gtk/gtkcalendar.h:40:0,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:53,
+                 from xglock.c:64:
+xglock.c: In function ‘create_boolOptions_buttons’:
+xglock.c:1515:28: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+                            (gpointer)i);
+                            ^
+/usr/include/gtk-2.0/gtk/gtksignal.h:49:62: note: in definition of macro ‘gtk_signal_connect’
+    gtk_signal_connect_full ((object), (name), (func), NULL, (func_data), NULL, 0, 0)
+                                                              ^
+gcc -Wnested-externs -Wno-format -o xglock xglock.o -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0   
+xglock BUILD COMPLETE
+
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+make[1]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+chmod u+x debian/fvwm2rc2menu
+debian/fvwm2rc2menu
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_clean -k
+dh_clean: dh_clean -k is deprecated; use dh_prep instead
+dh_installdirs
+/usr/bin/make install \
+		INSTALL_PROGRAM=install \
+		INSTPGMFLAGS="" \
+		xapploaddir=`pwd`/debian/xlockmore-gl/etc/X11/app-defaults \
+		prefix=`pwd`/debian/xlockmore-gl/usr
+make[1]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+make[2]: Nessuna operazione da eseguire per "install".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: Nessuna operazione da eseguire per "install".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+../mkinstalldirs /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/bin
+mkdir -p -- /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/bin
+install  ../xlock/xlock /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/bin
+#mkdir -p /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/lib/X11/xlock/modules
+#cp *.xlk /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/lib/X11/xlock/modules
+#cp glx/*.xlk /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/lib/X11/xlock/modules
+../mkinstalldirs /share/man/man1
+mkdir -p -- /share/man/man1
+mkdir: impossibile creare la directory "/share": Permesso negato
+make[2]: *** [install-man] Errore 1
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: Nessuna operazione da eseguire per "install".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+../mkinstalldirs /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/bin
+install xglock /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/bin
+../mkinstalldirs /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/share/xlock
+mkdir -p -- /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/share/xlock
+install ../xglock/xglockrc /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore-gl/usr/share/xlock/xglockrc
+install_xglock COMPLETE
+
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+make[1]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+mkdir -p debian/xlockmore-gl/etc/pam.d
+install -m 644 debian/xlock.pam \
+		debian/xlockmore-gl/etc/pam.d/xlock
+mkdir -p debian/xlockmore-gl/etc/X11/Xresources
+install -m 644 debian/xresources \
+		debian/xlockmore-gl/etc/X11/Xresources/xlockmore
+install -m 644 debian/xlock.staff \
+		debian/xlockmore-gl/etc/xlock.staff
+/usr/bin/make install \
+		INSTALL_PROGRAM=install \
+		INSTPGMFLAGS="" \
+		xapploaddir=`pwd`/debian/xlockmore/etc/X11/app-defaults \
+		prefix=`pwd`/debian/xlockmore/usr
+make[1]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+make[2]: Nessuna operazione da eseguire per "install".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: Nessuna operazione da eseguire per "install".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes/glx"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+../mkinstalldirs /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/bin
+mkdir -p -- /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/bin
+install  ../xlock/xlock /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/bin
+#mkdir -p /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/lib/X11/xlock/modules
+#cp *.xlk /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/lib/X11/xlock/modules
+#cp glx/*.xlk /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/lib/X11/xlock/modules
+../mkinstalldirs /share/man/man1
+mkdir -p -- /share/man/man1
+mkdir: impossibile creare la directory "/share": Permesso negato
+make[2]: *** [install-man] Errore 1
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/modes"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: Nessuna operazione da eseguire per "install".
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xmlock"
+make[2]: ingresso nella directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+../mkinstalldirs /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/bin
+install xglock /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/bin
+../mkinstalldirs /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/share/xlock
+mkdir -p -- /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/share/xlock
+install ../xglock/xglockrc /home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/debian/xlockmore/usr/share/xlock/xglockrc
+install_xglock COMPLETE
+
+make[2]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42/xglock"
+make[1]: uscita dalla directory "/home/gelma/dev/prg/xlockmore/5.42/xlockmore-5.42"
+install debian/xlock debian/xlockmore/usr/bin
+install -D -m 644 debian/README.Debian \
+		debian/xlockmore/usr/share/doc/xlockmore/README.Debian
+mkdir -p debian/xlockmore/etc/pam.d
+install -m 644 debian/xlock.pam \
+		debian/xlockmore/etc/pam.d/xlock
+mkdir -p debian/xlockmore/etc/X11/Xresources
+install -m 644 debian/xresources \
+		debian/xlockmore/etc/X11/Xresources/xlockmore
+install -m 644 debian/xlock.staff \
+		debian/xlockmore/etc/xlock.staff
+rm -rf debian/xlockmore-gl/etc/X11/app-defaults
+rm -rf debian/xlockmore/etc/X11/app-defaults
+dh_installdocs
+dh_buildinfo
+dh_installexamples
+dh_installmenu
+dh_installcron
+dh_installman -A xlock/xlock.man
+dh_installchangelogs
+dh_strip
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_shlibdeps
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb: attenzione: il file di configurazione "/etc/xlock.staff" è duplicato
+dpkg-deb: attenzione: il file di configurazione "/etc/pam.d/xlock" è duplicato
+dpkg-deb: attenzione: il file di configurazione "/etc/X11/Xresources/xlockmore" è duplicato
+dpkg-deb: attenzione: 3 avvisi relativi ai file di controllo vengono ignorati
+
+dpkg-deb: generazione del pacchetto "xlockmore-gl" in "../xlockmore-gl_5.42-1_amd64.deb".
+dpkg-deb: attenzione: il file di configurazione "/etc/xlock.staff" è duplicato
+dpkg-deb: attenzione: il file di configurazione "/etc/pam.d/xlock" è duplicato
+dpkg-deb: attenzione: il file di configurazione "/etc/X11/Xresources/xlockmore" è duplicato
+dpkg-deb: attenzione: 3 avvisi relativi ai file di controllo vengono ignorati
+
+dpkg-deb: generazione del pacchetto "xlockmore" in "../xlockmore_5.42-1_amd64.deb".
+ dpkg-genchanges  >../xlockmore_5.42-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build xlockmore-5.42
+dpkg-buildpackage: full upload; Debian-native package (full source is included)
+Now running lintian...
+W: xlockmore source: native-package-with-dash-version
+W: xlockmore source: configure-generated-file-in-source config.log
+W: xlockmore source: configure-generated-file-in-source config.status
+W: xlockmore source: debhelper-but-no-misc-depends xlockmore-gl
+W: xlockmore source: debhelper-but-no-misc-depends xlockmore
+E: xlockmore source: build-depends-on-obsolete-package build-depends: dpatch
+W: xlockmore source: dpatch-build-dep-but-no-patch-list
+W: xlockmore source: debian-rules-missing-recommended-target build-arch
+W: xlockmore source: debian-rules-missing-recommended-target build-indep
+W: xlockmore source: ancient-standards-version 3.9.0.0 (current is 3.9.4)
+W: xlockmore: debian-changelog-line-too-long line 4
+W: xlockmore: debian-changelog-line-too-long line 5
+E: xlockmore: duplicate-conffile etc/xlock.staff
+E: xlockmore: duplicate-conffile etc/pam.d/xlock
+E: xlockmore: duplicate-conffile etc/X11/Xresources/xlockmore
+W: xlockmore: binary-without-manpage usr/bin/xglock
+W: xlockmore: executable-not-elf-or-script usr/share/xlock/xglockrc
+W: xlockmore-gl: debian-changelog-line-too-long line 4
+W: xlockmore-gl: debian-changelog-line-too-long line 5
+E: xlockmore-gl: duplicate-conffile etc/xlock.staff
+E: xlockmore-gl: duplicate-conffile etc/pam.d/xlock
+E: xlockmore-gl: duplicate-conffile etc/X11/Xresources/xlockmore
+W: xlockmore-gl: binary-without-manpage usr/bin/xglock
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:3
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:6
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:9
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:12
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:15
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:18
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:21
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:24
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:27
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:30
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:33
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:36
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:39
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:42
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:45
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:48
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:51
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Automata usr/share/menu/xlockmore-gl:54
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:57
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:60
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:63
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:66
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:69
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:72
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:75
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:78
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:81
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:84
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:87
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:90
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:93
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:96
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:99
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:102
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:105
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:108
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:111
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:114
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:117
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:120
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:123
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Fractal usr/share/menu/xlockmore-gl:126
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:129
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:132
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:135
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:138
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:141
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:144
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:147
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:150
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:153
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:156
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:159
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:162
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:165
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:168
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:171
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:174
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:177
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:180
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:183
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:186
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:189
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:192
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:195
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Geometry usr/share/menu/xlockmore-gl:198
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:201
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:204
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:207
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:210
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:213
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:216
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:219
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:222
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:225
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:228
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:231
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:234
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:237
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Space usr/share/menu/xlockmore-gl:240
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:243
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:246
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:249
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:252
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:255
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:258
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:261
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:264
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:267
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:270
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:273
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:276
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:279
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:282
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:285
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:288
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:291
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:294
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:297
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:300
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:303
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:306
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:309
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:312
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:315
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:318
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:321
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:324
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:327
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:330
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:333
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:336
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:339
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:342
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:345
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:348
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:351
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:354
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:357
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:360
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:363
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Assorted usr/share/menu/xlockmore-gl:366
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XPM usr/share/menu/xlockmore-gl:369
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XPM usr/share/menu/xlockmore-gl:372
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XPM usr/share/menu/xlockmore-gl:375
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XPM usr/share/menu/xlockmore-gl:378
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XPM usr/share/menu/xlockmore-gl:381
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XPM usr/share/menu/xlockmore-gl:384
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XPM usr/share/menu/xlockmore-gl:387
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XPM usr/share/menu/xlockmore-gl:390
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:393
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:396
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:399
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:402
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:405
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:408
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:411
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:414
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:417
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:420
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:423
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:426
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:429
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:432
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:435
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:438
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:441
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:444
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:447
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:450
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:453
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:456
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:459
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/GLmodes usr/share/menu/xlockmore-gl:462
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/MarqueeMessage usr/share/menu/xlockmore-gl:465
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/MarqueeMessage usr/share/menu/xlockmore-gl:468
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/MarqueeMessage usr/share/menu/xlockmore-gl:471
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/NoseMessage usr/share/menu/xlockmore-gl:474
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/NoseMessage usr/share/menu/xlockmore-gl:477
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/NoseMessage usr/share/menu/xlockmore-gl:480
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XjackMessage usr/share/menu/xlockmore-gl:483
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XjackMessage usr/share/menu/xlockmore-gl:486
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:489
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:492
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:495
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:498
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:501
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:504
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:507
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:510
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/Special usr/share/menu/xlockmore-gl:513
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:516
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:519
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:522
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:525
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:528
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:531
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:534
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:537
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:540
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:543
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:546
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:549
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:552
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:555
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:558
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:561
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:564
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Automata usr/share/menu/xlockmore-gl:567
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:570
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:573
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:576
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:579
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:582
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:585
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:588
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:591
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:594
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:597
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:600
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:603
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:606
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:609
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:612
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:615
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:618
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:621
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:624
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:627
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:630
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:633
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:636
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Fractal usr/share/menu/xlockmore-gl:639
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:642
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:645
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:648
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:651
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:654
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:657
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:660
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:663
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:666
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:669
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:672
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:675
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:678
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:681
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:684
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:687
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:690
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:693
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:696
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:699
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:702
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:705
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:708
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Geometry usr/share/menu/xlockmore-gl:711
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:714
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:717
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:720
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:723
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:726
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:729
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:732
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:735
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:738
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:741
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:744
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:747
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:750
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Space usr/share/menu/xlockmore-gl:753
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:756
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:759
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:762
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:765
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:768
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:771
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:774
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:777
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:780
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:783
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:786
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:789
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:792
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:795
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:798
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:801
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:804
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:807
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:810
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:813
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:816
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:819
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:822
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:825
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:828
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:831
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:834
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:837
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:840
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:843
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:846
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:849
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:852
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:855
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:858
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:861
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:864
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:867
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:870
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:873
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:876
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Assorted usr/share/menu/xlockmore-gl:879
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/XPM usr/share/menu/xlockmore-gl:882
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/XPM usr/share/menu/xlockmore-gl:885
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/XPM usr/share/menu/xlockmore-gl:888
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/XPM usr/share/menu/xlockmore-gl:891
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/XPM usr/share/menu/xlockmore-gl:894
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/XPM usr/share/menu/xlockmore-gl:897
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/XPM usr/share/menu/xlockmore-gl:900
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/XPM usr/share/menu/xlockmore-gl:903
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:906
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:909
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:912
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:915
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:918
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:921
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:924
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:927
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:930
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:933
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:936
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:939
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:942
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:945
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:948
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:951
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:954
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:957
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:960
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:963
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:966
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:969
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/GLmodes usr/share/menu/xlockmore-gl:972
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/MarqueeMessage usr/share/menu/xlockmore-gl:975
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/MarqueeMessage usr/share/menu/xlockmore-gl:978
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/MarqueeMessage usr/share/menu/xlockmore-gl:981
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/NoseMessage usr/share/menu/xlockmore-gl:984
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/NoseMessage usr/share/menu/xlockmore-gl:987
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/NoseMessage usr/share/menu/xlockmore-gl:990
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XjackMessage usr/share/menu/xlockmore-gl:993
+W: xlockmore-gl: menu-item-creates-new-section Screen/Lock/XjackMessage usr/share/menu/xlockmore-gl:996
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Special usr/share/menu/xlockmore-gl:999
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Special usr/share/menu/xlockmore-gl:1002
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Special usr/share/menu/xlockmore-gl:1005
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Special usr/share/menu/xlockmore-gl:1008
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Special usr/share/menu/xlockmore-gl:1011
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Special usr/share/menu/xlockmore-gl:1014
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Special usr/share/menu/xlockmore-gl:1017
+W: xlockmore-gl: menu-item-creates-new-section Screen/Save/Special usr/share/menu/xlockmore-gl:1020
+W: xlockmore-gl: executable-not-elf-or-script usr/share/xlock/xglockrc
+Finished running lintian.
+Now signing changes and any dsc files...
+ signfile xlockmore_5.42-1.dsc Andrea Gelmini <andrea.gelmini@linux.it>
+gpg: gpg-agent non è disponibile in questa sessione
+
+ signfile xlockmore_5.42-1_amd64.changes Andrea Gelmini <andrea.gelmini@linux.it>
+gpg: gpg-agent non è disponibile in questa sessione
+
+Successfully signed dsc and changes files
