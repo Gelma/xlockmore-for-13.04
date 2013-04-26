@@ -1,12 +1,14 @@
 == Whatta? ==
 
-In Ubuntu 13.04 ( http://www.ubuntu.com they ) they removed xlock ( http://www.tux.org/~bagleyd/xlockmore.html ).
+In Ubuntu 13.04 ( http://www.ubuntu.com ) they removed xlock ( http://www.tux.org/~bagleyd/xlockmore.html ).
 
 I was sad, so I recompiled the latest version (5.42) for it.
 
 It's a quick&dirty repackaging. I committed everything here so others can check the final packages and the sources I used.
 
-It works on my machine, it doesn't mean it will work for you.
+It works on my machine, it doesn't mean it will work for you:
+* xlockmore: https://github.com/Gelma/xlockmore-for-13.04/blob/master/5.42/xlockmore_5.42-1_amd64.deb
+* xlockmore-gl: https://github.com/Gelma/xlockmore-for-13.04/blob/master/5.42/xlockmore-gl_5.42-1_amd64.deb
 
 Anyway, write to me if you need: andrea.gelmini@linux.it
 
