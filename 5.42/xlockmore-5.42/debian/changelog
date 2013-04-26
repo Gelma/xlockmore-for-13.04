@@ -1,0 +1,677 @@
+xlockmore (1:5.42-1) UNRELEASED; urgency=low
+
+  * Quick&dirty rebuild for Ubuntu 13.04:
+   * took latest xlockmore sources from http://www.tux.org/~bagleyd/xlock/xlockmore-5.42/
+   * took debian/ from https://launchpad.net/ubuntu/quantal/+source/xlockmore/1:5.31-1.1
+   * recompiled
+
+ -- Andrea Gelmini <andrea.gelmini@linux.it>  Fri, 26 Apr 2013 11:06:02 +0200
+
+xlockmore (1:5.31-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/patches:
+    - 07_dpmsblank updated to test if DPMS is disabled before forcing DPMS
+      level, preventing an Xerror preventing the lock.          closes: #630476
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 10 Oct 2011 18:03:23 +0200
+
+xlockmore (1:5.31-1) unstable; urgency=low
+
+  * New upstream version
+  * don't flush events when clearing echokeys (Closes: #517713, #517355)
+  * update build-dependencies (Closes: #579031)
+  * update README.Debian (Closes: #539786)
+  * use DPMS for blank mode (Closes: #83413, #558695)
+  * xlockmore has only blank mode, all others in xlockmore-gl
+
+ -- Michael Stone <mstone@debian.org>  Mon, 19 Jul 2010 20:52:12 -0400
+
+xlockmore (1:5.27-1) unstable; urgency=low
+
+  * New upstream version
+  * Change x-dev dependency to x11proto-core-dev (Closes: #515419)
+  * echokeys and pam output area are cleared between pam modules
+  * pam seems to be working for libpam-opie at least
+
+ -- Michael Stone <mstone@debian.org>  Sun, 22 Feb 2009 14:22:38 -0500
+
+xlockmore (1:5.22-1.4) unstable; urgency=low
+
+  * Non-Maintainer Upload.
+  * Fix the dh_installman call, as it should work on all the created
+    packages and not only on the first one (Closes: #400781).
+
+ -- Luca Capello <luca@pca.it>  Tue, 25 Mar 2008 19:36:15 +0100
+
+xlockmore (1:5.22-1.3) unstable; urgency=low
+
+  * Non-Maintainer Upload to address RG bug
+  * Address FTBFS when building the package twice in a row due to improper
+    cleaning (Closes: #424111)
+
+ -- Vincent Bernat <bernat@luffy.cx>  Mon, 17 Mar 2008 19:30:35 +0100
+
+xlockmore (1:5.22-1.2) unstable; urgency=high
+
+  * Non-Maintainer Upload to address RC bug
+  * Add conflicts on libpam-opie and libpam-p11, mitigating a potential
+    security issue (addressing: #318123, #399003)
+
+ -- Jeroen van Wolffelaar <jeroen@wolffelaar.nl>  Wed, 17 Jan 2007 01:49:41 +0100
+
+xlockmore (1:5.22-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload, BSP Zurich/Switzerland
+  * Set the mandir correctly with configure, use now dh_installman instead of
+    dh_installmanpages (Closes: #384081).
+
+ -- Mario Iseli <admin@marioiseli.com>  Sun, 08 Oct 2006 12:55:54 +0200
+
+xlockmore (1:5.22-1) unstable; urgency=low
+
+  * New upstream version
+    - new modes deluxe & anemone
+  * Fix debian/rules to remove app-defaults from new location
+    (Closes: #366009)
+  * Update menu file with new path (Closes: #365686)
+
+ -- Michael Stone <mstone@debian.org>  Tue, 23 May 2006 20:41:38 -0400
+
+xlockmore (1:5.21-3) unstable; urgency=low
+
+  * Actually fix that...try to upload the right one this time...
+
+ -- Michael Stone <mstone@debian.org>  Sat, 15 Apr 2006 22:21:07 -0400
+
+xlockmore (1:5.21-2) unstable; urgency=low
+
+  * Recompile due to what might be the stupidest transition plan I have
+    ever seen in debian (Closes: #362693)
+
+ -- Michael Stone <mstone@debian.org>  Sat, 15 Apr 2006 19:55:36 -0400
+
+xlockmore (1:5.21-1) unstable; urgency=low
+
+  * New upstream version (Closes: #323445)
+  * Update man page concerning echokeys (Closes: #271558)
+  * Integrate build-dep changes (Closes: #347050, #337467)
+  * Clean up references to vtlock (Closes: #63021, #241925, #307223)
+  * Bump standards version
+
+ -- Michael Stone <mstone@debian.org>  Fri, 03 Mar 2006 20:48:16 -0500
+
+xlockmore (1:5.13-2.2) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Split xlibs-dev build-dep (Closes: #347050).
+  * Update build-dep on mesa to xlibmesa-gl-dev (Closes: #337467).
+  * Fix security bug which allows unauthorized access to X (Closes: #318123)
+    [CVE-2006-0061].
+
+ -- Luk Claes <luk@debian.org>  Fri, 20 Jan 2006 20:01:04 +0100
+
+xlockmore (1:5.13-2.1) unstable; urgency=high
+
+  * NMU
+  * Applied newest patch from Eugene to avoid fatal crash when fvwm
+    switches virtual desktop. (closes: #309760) [CVE-2006-0062]
+
+ -- Kenshi Muto <kmuto@debian.org>  Mon, 23 May 2005 11:30:18 +0000
+
+xlockmore (1:5.13-2) unstable; urgency=low
+
+  * Correct instructions for dpkg-statoverride in README.Debian
+  * Update copyright file
+  * rename manpages from .1x to .1
+
+ -- Michael Stone <mstone@debian.org>  Thu, 19 Aug 2004 13:58:36 -0400
+
+xlockmore (1:5.13-1) unstable; urgency=low
+
+  * New upstream version
+    - allows key echo (*) for password entry
+  * reenable allowroot
+    (See README.Debian for instructions on using this)
+  * rename xresources/XLock to xresources/xlockmore
+    (Closes: #233906)
+  * use @include in pam configuration (Closes: #264381, #265298)
+    (See README.Debian for some PAM notes)
+  * standards version 3.6.1.0
+
+ -- Michael Stone <mstone@debian.org>  Thu, 19 Aug 2004 07:04:38 -0400
+
+xlockmore (1:5.09-1) unstable; urgency=low
+
+  * New upstream version
+    - fixes some core dumps
+    - some support for pam conversations. work in progress.
+    - mazes can be really big (Closes: #175667)
+    - logoutButton is in man page (Closes: #171154)
+  * rebuild should fix odd symbols caused by broken build environment
+    (Closes: #178146)
+  * enable BAD_PAM, which allows suid xlock to work with pam.
+    I *strongly* recommend *not* doing this for security reasons.
+  * standards version 3.6.0
+  * dh_buildinfo
+
+ -- Michael Stone <mstone@debian.org>  Sun, 10 Aug 2003 08:08:18 -0400
+
+xlockmore (1:5.06-1) unstable; urgency=low
+
+  * New upstream version
+  * atlantis mode doesn't mind negative count (Closes: #169167)
+  * autoupdate config.{sub,guess} (Closes: #159562)
+  * don't allow root to unlock anymore. didn't work with current
+    config anyway. if there's a groundswell of demand for this
+    I might try to get it working. (Closes: #119765)
+  * button logout can be more than 10 minutes (Closes: #171978)
+  * char signedness error is corrected (Closes: #177290)
+
+ -- Michael Stone <mstone@debian.org>  Sun, 09 Feb 2003 09:54:11 -0500
+
+xlockmore (1:5.04-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Michael Stone <mstone@debian.org>  Tue, 27 Aug 2002 10:50:22 -0400
+
+xlockmore (1:5.02-2) unstable; urgency=low
+
+  * corrected Debian GNU/Linux in copyright
+  * conflicts with older xbase (for xresources support)
+
+ -- Michael Stone <mstone@debian.org>  Tue, 15 Jan 2002 10:06:14 -0500
+
+xlockmore (1:5.02-1) unstable; urgency=low
+
+  * New upstream version
+  * Corrected XLock resources location in README.Debian
+  * Explicitly name entry in Xresources file (Closes: #126884)
+
+ -- Michael Stone <mstone@debian.org>  Mon, 14 Jan 2002 15:22:09 -0500
+
+xlockmore (1:5.00-5.02ALPHA11-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Michael Stone <mstone@debian.org>  Sat, 15 Sep 2001 11:26:38 -0400
+
+xlockmore (1:5.00-5.02ALPHA07-1) unstable; urgency=low
+
+  * New upstream version
+  * Fix a couple of header conflicts (Closes: #105077)
+  * Changes to debian/rules to account for differences in the upstream
+    config/make routines.
+
+ -- Michael Stone <mstone@debian.org>  Wed, 15 Aug 2001 06:38:06 -0400
+
+xlockmore (1:5.00-1) unstable; urgency=medium
+
+  * New upstream version
+  * New X4 build deps. Might even be right.
+  * Needs an epoch. oops.
+
+ -- Michael Stone <mstone@debian.org>  Wed, 24 Jan 2001 21:47:44 -0500
+
+xlockmore (5.00ALPHA08-1) unstable; urgency=low
+
+  * New upstream version
+  * possible fix for #79088
+
+ -- Michael Stone <mstone@debian.org>  Fri,  8 Dec 2000 10:25:39 -0500
+
+xlockmore (5.00ALPHA04-3) unstable; urgency=low
+
+  * removed lib/X11/app-defaults file
+  * silenced preinst
+
+ -- Michael Stone <mstone@debian.org>  Thu,  7 Dec 2000 07:47:07 -0500
+
+xlockmore (5.00ALPHA04-2) unstable; urgency=low
+
+  * stupid dpkg bug may actually be fixed now 
+
+ -- Michael Stone <mstone@debian.org>  Sat, 25 Nov 2000 19:32:38 -0500
+
+xlockmore (5.00ALPHA04-1) unstable; urgency=low
+
+  * New upstream version
+  * Kill off some unneeded libs (Closes: #77922)
+  * Depends on debhelper (Closes: #69720)
+  * New dpkg doesn't create false deps on libc5 (Closes: #77806)
+
+ -- Michael Stone <mstone@debian.org>  Fri, 24 Nov 2000 17:33:11 -0500
+
+xlockmore (5.00ALPHA02-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Michael Stone <mstone@debian.org>  Thu, 16 Nov 2000 22:42:03 -0500
+
+xlockmore (4.15-6) frozen unstable; urgency=low
+
+  * Clean up control file (update description)
+  * Recompile to fix stupid libvga dependency pulled in from mesagl
+
+ -- Michael Stone <mstone@debian.org>  Tue, 18 Jan 2000 07:35:43 -0500
+
+xlockmore (4.15-5) unstable; urgency=low
+
+  * Policy 3.1.1.1
+  * Final? resolution to the root logout/pam thing (Closes: #49014)
+
+ -- Michael Stone <mstone@debian.org>  Wed, 12 Jan 2000 17:44:12 -0500
+
+xlockmore (4.15-4) unstable; urgency=medium
+
+  * Change xlock.staff installation (Closes: #53417)
+  * Mark xlock.staff and Xresources/XLock as conffiles (Closes: #53567)
+  * Add recommends: libpam-modules (Closes: #53791)
+
+ -- Michael Stone <mstone@debian.org>  Fri, 31 Dec 1999 14:00:38 -0500
+
+xlockmore (4.15-3) unstable; urgency=low
+
+  * Wait, gltt isn't being used anyway. Get rid of it.
+
+ -- Michael Stone <mstone@debian.org>  Thu, 23 Dec 1999 16:02:25 -0500
+
+xlockmore (4.15-2) unstable; urgency=low
+
+  * Correct documentation typo (Closes: #52657)
+  * Recompile for libgltt
+
+ -- Michael Stone <mstone@debian.org>  Tue, 21 Dec 1999 22:55:51 -0500
+
+xlockmore (4.15-1) unstable; urgency=low
+
+  * New upstream version (Closes: #50825)
+
+ -- Michael Stone <mstone@debian.org>  Sun, 5 Oct 1999 08:31:53 -0500
+
+xlockmore (4.14-10) unstable; urgency=low
+
+  * Change priority of xlockmore (Closes: #49715)
+
+ -- Michael Stone <mstone@debian.org>  Thu, 21 Oct 1999 20:56:29 -0400
+
+xlockmore (4.14-9) unstable; urgency=low
+
+  * Add nullok to pam auth options (Closes: #47797)
+  * Fix dpms bug in blank mode (thanks to Eirik Fuller) (Closes: #30486)
+
+ -- Michael Stone <mstone@debian.org>  Thu, 21 Oct 1999 20:56:29 -0400
+
+xlockmore (4.14-8) unstable; urgency=medium
+
+  * Update copyright
+  * Changed conflicts to libpam-modules << 0.65-5 (the version that 
+    made /sbin/unix_chkpwd suid to work under NIS)
+  * Added logoutButton support
+
+ -- Michael Stone <mstone@debian.org>  Sat, 25 Sep 1999 10:03:34 -0400
+
+xlockmore (4.14-7) unstable; urgency=medium
+
+  * Update README.debian to cover current state of pam NIS support
+  * Now comply with policy 3.0.1.1
+
+ -- Michael Stone <mstone@debian.org>  Fri, 24 Sep 1999 19:08:05 -0400
+
+xlockmore (4.14-6) unstable; urgency=low
+
+  * Corrected preinst to check for suidunregister
+  * Put cartoon in xlockmore-gl menu, but not xlockmore menu
+  * Add armv*-* to config.sub to support builds on arm
+
+ -- Michael Stone <mstone@debian.org>  Sat, 18 Sep 1999 07:19:05 -0400
+
+xlockmore (4.14-5) unstable; urgency=low
+
+  * Fix stupid /usr/doc problem
+  * Add pam.d/xlock
+
+ -- Michael Stone <mstone@debian.org>  Sat, 18 Sep 1999 07:19:05 -0400
+
+xlockmore (4.14-4) unstable; urgency=low
+
+  * Update configs and readmes to remove suid handling and nis
+    special cases
+
+ -- Michael Stone <mstone@debian.org>  Fri, 17 Sep 1999 17:34:59 -0400
+
+xlockmore (4.14-3) unstable; urgency=low
+
+  * Enable pam support
+
+ -- Michael Stone <mstone@debian.org>  Mon, 13 Sep 1999 18:02:51 -0400
+
+xlockmore (4.14-2) unstable; urgency=low
+
+  * Fix dependencies (fixes #44397)
+  * Correct XLock default resources (upstream uses, e.g., XLock.mode which
+    can't be overriden with XLock*mode in a .Xresources) (fixes #41991)
+
+ -- Michael Stone <mstone@debian.org>  Thu, 9 Sep 1999 21:20:03 -0400
+
+xlockmore (4.14-1) unstable; urgency=low
+
+  * (another) new upstream release
+  * remove "cartoon" (invalid mode) from menu (fixes 30491)
+  * update clean target in debian/rules
+
+ -- Michael Stone <mstone@debian.org>  Thu, 7 Jul 1999 22:20:03 -0400
+
+xlockmore (4.13.1-1) unstable; urgency=low
+
+  * new upstream release
+  * new maintainer
+  * added --without-gtk to configure rules to keep it from finding 
+    gtk and/or gtkfontsel
+
+ -- Michael Stone <mstone@debian.org>  Thu, 24 Jun 1999 18:29:48 -0400
+
+xlockmore (4.12-4) frozen unstable; urgency=low
+
+  * xlock nolonger setuid 0 when shadow is not present, reverses stupid change
+    introduced in the previous release.
+  * Uploaded to slink.
+
+ -- Herbert Xu <herbert@debian.org>  Sun, 15 Nov 1998 14:29:48 +1100
+
+xlockmore (4.12-3) frozen unstable; urgency=low
+
+  * xlock permission set to 4755 if shadow is not present.
+
+ -- Herbert Xu <herbert@debian.org>  Wed, 11 Nov 1998 21:51:06 +1100
+
+xlockmore (4.12-2) unstable; urgency=low
+
+  * Rebuilt with mesag3 (fixes #28804).
+  * Make fvwm2rc2menu executable (fixes #27486).
+  * Enabled bomb mode (fixes #27945, #28301).
+
+ -- Herbert Xu <herbert@debian.org>  Tue,  3 Nov 1998 14:16:43 +1100
+
+xlockmore (4.12-1) unstable; urgency=low
+
+  * New upstream release.
+  * Automatically generated menu files.
+  * Use dh_suidregister (fixes #27245).
+
+ -- Herbert Xu <herbert@debian.org>  Thu,  1 Oct 1998 18:05:03 +1000
+
+xlockmore (4.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed mooebius again (the last one got lost somehow).
+
+ -- Herbert Xu <herbert@debian.org>  Sat, 27 Jun 1998 08:18:30 +1000
+
+xlockmore (4.10-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed niceness and moebius in menu files (#22268).
+  * Added goop mode to menu files.
+
+ -- Herbert Xu <herbert@debian.org>  Thu, 25 Jun 1998 21:14:41 +1000
+
+xlockmore (4.09-3) frozen unstable; urgency=low
+
+  * Changed XLock. to * in resource file (fixes #21063).
+  * Bugs fixed in previous relesaes (fixes #8276, #8406, #18083, #18587,
+    #18854, #19021, #19047, #19505, #19851).
+
+ -- Herbert Xu <herbert@debian.org>  Wed, 15 Apr 1998 10:42:12 +1000
+
+xlockmore (4.09-2) frozen unstable; urgency=low
+
+  * New maintainer.
+  * Converted to debhelper.
+  * Don't install xlockmore-gl if NIS is present.
+
+ -- Herbert Xu <herbert@debian.org>  Sat, 28 Mar 1998 12:36:21 +1100
+
+xlockmore (4.09-1) frozen unstable; urgency=low
+
+  * Upgraded to new upstream release 4.09 which promises to address the
+    slew of bugs that were recently filed against 4.07, 4.08 and 4.08.1
+   (#18083, #18534, #18587, #18649, #18854, #19047, #19505, #19851)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Tue, 24 Mar 1998 18:49:46 -0500
+
+xlockmore (4.08.1-1) unstable; urgency=low
+
+  * Upgraded to new upstream release 4.08.1
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Tue,  3 Mar 1998 18:51:41 -0500
+
+xlockmore (4.08-1) unstable; urgency=low
+
+  * Upgraded to new upstream release 4.08
+  * Fixed debian/rules so that docs for octave-gl package end up in 
+    /usr/doc/xlockmore-gl, not /usr/doc/xlockmore (lintian)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Mon,  2 Mar 1998 20:02:30 -0500
+
+xlockmore (4.07-1) unstable; urgency=low
+
+  * Upgraded to new upstream release 4.07
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Tue,  3 Feb 1998 18:57:43 -0500
+
+xlockmore (4.06.1-3) unstable; urgency=low
+
+  * Changed menu file for xlockmore-gl to indicate the correct package, and
+    changed control file to have xlockmore-gl 'Provides: xlockmore'.  This
+    fixes #15973. Thanks to Scott Ellis for spotting this. 
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Mon, 15 Dec 1997 20:29:32 -0500
+
+xlockmore (4.06.1-2) unstable; urgency=low
+
+  * Rewrote debian/rules to create two packages: one 'small' xlockmore
+    without XPM or OpenGL/MesaGL support which continues to be called 
+    xlockmore, and a new xlockmore-gl package with XPM and GL modes.
+  * Rewrote menu files for basic and gl package
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sun, 14 Dec 1997 16:52:58 -0500
+
+xlockmore (4.06.1-1) unstable; urgency=low
+
+  * Upgraded to new upstream release 4.06.1
+  * Added menu entry for new 'mandelbrot' and 'dilemma' modes
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sun, 23 Nov 1997 12:38:39 -0500
+
+xlockmore (4.05-2) unstable; urgency=low
+
+  * Changed to repaired postinst by Phil Troin (thanks !) (fixes #14215)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Wed, 29 Oct 1997 20:55:00 -0500
+
+xlockmore (4.05-1) unstable; urgency=low
+
+  * Upgraded to new upstream release 4.05
+  * Changed postinst to accomodate NIS-mangling (fixes bug #13806)
+    
+ -- Dirk Eddelbuettel <edd@debian.org>  Tue, 14 Oct 1997 20:51:28 -0400
+
+xlockmore (4.04-2) unstable; urgency=low
+
+  * Removed 'bomb' entry from menu file (fixes bug #13068)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sun,  5 Oct 1997 11:34:14 -0400
+
+xlockmore (4.04-1) unstable; urgency=low
+
+  * Upgraded to new upstream release 4.04 (fixes bug #13406)
+  * Compiled (again) with GNU libc2 aka libc6
+  * Linked against xlib6g and xpm4g (fixes bug #12958)
+  * Changed postinst to accomodate NIS setting (fixes bug #13252)
+  * Added -remote to command in menu file (fixes feature request #13095)
+  * Upgraded to Debian Policy 2.3.0.0
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Tue, 30 Sep 1997 21:24:12 -0400
+
+xlockmore (4.03.1-2) unstable; urgency=low
+
+  * Reverted back to libc5 to match the X11 libs (fixes bug 11955)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sat, 9 Aug 1997 17:12:07 -0400
+
+xlockmore (4.03.1-1) unstable; urgency=low
+
+  * Upgraded to new upstream release 4.03.1
+  * Compiled with GNU libc2 aka libc6 
+  * Now ships the unmodified upstream source as xlockmore_4.03.1.orig.tar.gz 
+  * Applied patch by David Bagley to configure.in so that LIBCRYPT=-lcrypt
+    is automatically recognised
+  * Rewrote the menu file based on the config/system.fvwmrc2.xlock file by
+    James G. Feeney <james@albion.glarp.com> --- xlock now has a much
+    refined menu structure
+  * Now built with xpm
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sun,  3 Aug 1997 09:15:44 -0400
+
+xlockmore (4.03-1) unstable; urgency=low
+
+  * Upgraded to new upstream release 
+
+  * Added test for /etc/shadow being group shadow to postinst 
+
+  * Added menu file 
+  	
+ -- Dirk Eddelbuettel <edd@debian.org>  Sat, 12 Jul 1997 18:31:33 -0400
+
+xlockmore (4.02.1-1.1) unreleased; urgency=low
+
+  * compiled under xlib6_3.3-3
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Tue, 8 Jul 1997 19:46:02 -0400
+
+xlockmore (4.02.1-1) frozen unstable; urgency=medium
+
+  * new upstream version: fixes for swirl mode (multiscreen mode) and 
+    tube mode (should no longer bomb out on TrueColor) (#9238,#9584,#10085)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sat, 31 May 1997 21:16:15 -0400
+
+xlockmore (4.02-1) unstable frozen stable; urgency=medium
+
+  * new upstream release xlockmore-4.01 with several enhancements (as for
+    example a Debian flag as well as more new modes) and fixes
+
+  * removed Conflicts: xtrlock as the problem is with the autolock package
+    and not with a conflict between xtrlock and xlock (fixes bug #8418)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Thu, 24 Apr 1997 19:10:54 -0400
+
+xlockmore (4.01-2) unstable; urgency=low
+
+  * Include the postinst that should have been in 4.01-1 (fixes bug #8020)
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Tue, 18 Mar 1997 22:21:21 -0500
+
+xlockmore (4.01-1) unstable; urgency=medium
+
+  * new upstream release xlockmore-4.01 with fixes in xlock.c if the HOME 
+    variable is not set, in demon.c for multiscreens, for buffer overrun
+    security hole when xlock is setuid root (bug #7630)
+
+  * changed mode on xlock to mode 0755 (bug #7412, #7630, #7636)
+  * changed postinst to set xlock setgid shadow, mode 2755 if /etc/shadow
+    is on the system --- that's the best we can as long as there is no
+    group shadow in the default /etc/group file for Debian
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Wed, 5 Mar 1997 21:21:56 -0500
+
+xlockmore (4.00-1) unstable; urgency=low
+
+  * new upstream release xlockmore-4.00
+  * changed debian/rules to use new configure mechanism
+	
+  * added Conflicts: xtrlock to debian/rules in response to bug #4551
+    to avoid having xlockmore and xtrlock started from xautolock
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Wed, 12 Feb 1997 21:39:04 -0500
+
+xlockmore (3.13-1) unstable; urgency=low
+
+  * new upstream release xlockmore-3.13 (fixes bug #5966)
+  * Now Suggests: (rather than Recommends:) fortune 
+  
+ -- Dirk Eddelbuettel <edd@debian.org>  Tue, 17 Dec 1996 21:08:48 -0500
+
+xlockmore (3.12-1) unstable; urgency=low
+
+  * new upstream release xlockmore-3.12
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Sun, 24 Nov 1996 18:03:30 -0500
+
+xlockmore (3.11-3) unstable; urgency=medium
+
+  * Added a brand new patch by the upstream maintainer, David Bagley
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Thu, 10 Oct 1996 00:34:02 -0400
+
+xlockmore (3.11-2) unstable; urgency=low
+
+  * Added Depends: field to debian/control 
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Wed, 9 Oct 1996 00:40:06 -0400
+
+xlockmore (3.11-1) unstable; urgency=low
+
+  * new upstream release xlockmore-3.11
+
+  * Converted package management files to new Debian-1.2 style
+  * Changed maintainer email address to <edd@debian.org>
+
+ -- Dirk Eddelbuettel <edd@debian.org>  Mon, 7 Oct 1996 17:28:57 -0400
+
+Tue Aug  6 17:14:40 1996  Dirk Eddelbuettel  <edd@miles.econ.queensu.ca>
+
+	* xlockmore-3.10-0 release
+	
+ 	* debian.control: "Depends:" changed to X11R6 from elf-x11r6lib 
+
+Mon Jul  8 09:57:35 1996  Dirk Eddelbuettel  <edd@miles.econ.queensu.ca>
+
+	* xlockmore-3.9-1 release
+	
+	* debian.rules: xlock installs now with mode 4755 needed to support
+	  shadow passwords (thanks to Michael Meskes for the pointer)
+
+	* xlock.1: fixed an upstream typo (bug#3527), installs now as
+	  xlock.1x and is compressed via gzip -9
+	
+Thu Jun  6 19:32:09 1996  Dirk Eddelbuettel  <edd@miles.econ.queensu.ca>
+
+	* xlockmore-3.9-0 release: new upstream version
+
+Fri Apr 12 13:41:31 1996  Dirk Eddelbuettel  <edd@miles.econ.queensu.ca>
+
+	* xlockmore-3.8-0 release: new upstream version
+	
+	* debian.rules: added Architecture: field 
+
+Sat Jan 20 14:57:13 1996  Dirk Eddelbuettel  <edd@miles.econ.queensu.ca>
+
+	* xlockmore-3.6-1 Elf release, depends on libc5 and elf-x11r6lib
+
+	* petal.c: repaired version from David Bagley (fixes bug#2181)
+
+Wed Jan 10 16:31:32 1996  Dirk Eddelbuettel  <edd@miles.econ.queensu.ca>
+
+	* xlockmore-3.6-0 release: a.out and elf of new upstream version
+
+Sat Dec 16 17:22:08 1995  Dirk Eddelbuettel  <edd@miles.econ.queensu.ca>
+
+	* xlockmore-3.5-0 release: new upstream version
+
+Sat Aug  5 17:25:01 1995  Dirk Eddelbuettel  <edd@miles.econ.queensu.ca>
+      
+	* xlockmore-3.0-0: Initial Debian release
+

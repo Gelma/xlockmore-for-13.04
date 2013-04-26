@@ -1,0 +1,47 @@
+Source: xlockmore
+Section: x11
+Maintainer: Michael Stone <mstone@debian.org>
+Standards-Version: 3.9.0.0
+Priority: optional
+Build-Depends:  libgl1-mesa-dev, libx11-dev, libxdmcp-dev, libxext-dev, libxmu-dev, libxpm-dev, libxt-dev, x11proto-core-dev, libglu1-mesa-dev, perl, libpam0g-dev, debhelper, dh-buildinfo, dpatch
+
+Package: xlockmore-gl
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: fortune
+Recommends: libpam-modules
+Conflicts: xlockmore
+Replaces: xlockmore
+Provides: xlockmore
+Priority: optional
+Description: Lock X11 display until password is entered -- GL version
+ xlock locks the X server till the user enters his/her password at the
+ keyboard.  While xlock is running, all new server connections are
+ refused. The mouse cursor is turned off.  The screen is blanked and a
+ changing pattern is put on the screen. If a key or a mouse button is
+ pressed then the user is prompted for the password of the user who
+ started xlock.
+ .
+ This version is built with graphical modes. The companion package 
+ xlockmore does not contain them. This is the only difference between 
+ the two packages.
+
+Package: xlockmore
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: fortune
+Recommends: libpam-modules
+Conflicts: xlockmore-gl
+Replaces: xlockmore-gl
+Priority: extra
+Description: Lock X11 display until password is entered.
+ xlock locks the X server till the user enters his/her password at the
+ keyboard.  While xlock is running, all new server connections are
+ refused. The mouse cursor is turned off.  The screen is blanked and a
+ changing pattern is put on the screen. If a key or a mouse button is
+ pressed then the user is prompted for the password of the user who
+ started xlock.
+ .
+ This version is built with only blank mode, the companion package 
+ xlockmore-gl contains them. This is the only difference between the 
+ two packages.

@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+
+open FVWM2RC, "etc/system.fvwm2rc.xlock";
+open MENU, ">debian/menu" or die "Can't open debian/menu.\n";
+#open NOGL_MENU, ">debian/xlockmore.menu" or die "Can't open debian/xlockmore.menu.\n";
+while (<FVWM2RC>) {
+	if (/^AddToMenu\s*(".*")$/) {
+		$section = $1;
+		$section =~ s/-Saver"$/-Save"/;
+		$section =~ s:^"(.*)-(Lock|Save)"$:"Screen/$2/$1":;
+		$gl = $section =~ s:/GL"$:/GLmodes":;
+		$section =~ s/-Message"$/Message"/;
+	} elsif (/^\+\s*(".*")\s*Exec\s*(.*)/) {
+		$title = $1;
+		$command = $2;
+		$command =~ s/^xlock/\/usr\/bin\/xlock -remote -nice 19/;
+		$command =~ s/"/\\"/g;
+
+		print MENU "?package(xlockmore-gl):needs=\"x11\" ";
+		print MENU "section=", $section, " \\\n";
+		print MENU "\ttitle=", $title, " \\\n";
+		print MENU "\tcommand=\"", $command, "\"\n";
+
+		if (!$gl && !($title =~ /Cartoon/)) {
+			print NOGL_MENU "?package(xlockmore):needs=\"x11\" ";
+			print NOGL_MENU "section=", $section, " \\\n";
+			print NOGL_MENU "\ttitle=", $title, " \\\n";
+			print NOGL_MENU "\tcommand=\"", $command, "\"\n";
+		}
+	}
+}
+#close NOGL_MENU;
+close MENU;
+close FVWM2RC;
