@@ -1,0 +1,40 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01_more_debug_messages.dpatch by Michael Stone <mstone@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: add/modify debug messages
+
+@DPATCH@
+diff -urNad xlockmore-5.27~/xlock/passwd.c xlockmore-5.27/xlock/passwd.c
+--- xlockmore-5.27~/xlock/passwd.c	2008-06-09 22:45:16.000000000 -0400
++++ xlockmore-5.31/xlock/passwd.c	2009-02-22 13:39:43.996432346 -0500
+@@ -1196,9 +1196,16 @@
+ #endif
+ 	if (pam_error != PAM_SUCCESS) {
+                 if (!allowroot) {
+-					PAM_BAIL;
++#ifdef DEBUG
++			(void) printf("PAM: pam_authenticate not attempting root\n");
++#endif
++			PAM_BAIL;
+                 }
+ 
++#ifdef DEBUG
++		(void) printf("PAM: pam_authenticate attempting root\n");
++#endif
++
+ 		/* Try as root; bail if no success there either */
+ 		pam_error = pam_set_item(pamh, PAM_USER, ROOT);
+ 		PAM_BAIL;
+diff -urNad xlockmore-5.27~/xlock/xlock.c xlockmore-5.27/xlock/xlock.c
+--- xlockmore-5.27~/xlock/xlock.c	2008-08-31 22:09:56.000000000 -0400
++++ xlockmore-5.27/xlock/xlock.c	2009-02-22 13:41:44.227933820 -0500
+@@ -4027,7 +4027,7 @@
+     resp->resp_retcode = PAM_SUCCESS;
+ 
+ #ifdef DEBUG
+-    (void) printf( "Received Username: (%s)\n", resp->resp );
++    (void) printf( "Received Input: (%s)\n", resp->resp );
+ #endif
+   }
+   else

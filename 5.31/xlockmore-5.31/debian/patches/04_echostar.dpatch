@@ -1,0 +1,46 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 04_echostar.dpatch by Michael Stone <mstone@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: use * for echokey instead of ?, enable by default
+
+@DPATCH@
+diff -urNad xlockmore-5.27~/xlock/resource.c xlockmore-5.27/xlock/resource.c
+--- xlockmore-5.27~/xlock/resource.c	2009-02-22 14:14:48.751932391 -0500
++++ xlockmore-5.31/xlock/resource.c	2009-02-22 14:14:48.871932233 -0500
+@@ -586,8 +586,8 @@
+ #endif
+ 	{(char *) "-/+debug", (char *) "whether to use debug xlock (yes/no)"},
+ 	{(char *) "-/+description", (char *) "whether to show mode description (yes/no)"},
+-	{(char *) "-/+echokeys", (char *) "turn on/off echo '?' for each password key"},
+-	{(char *) "-echokey char", (char *) "text character to use for echo key, default is '?'"},
++	{(char *) "-/+echokeys", (char *) "turn on/off echo '*' for each password key"},
++	{(char *) "-echokey char", (char *) "text character to use for echo key, default is '*'"},
+ 	{(char *) "-/+enablesaver", (char *) "turn on/off enable X server screen saver"},
+ 	{(char *) "-/+resetsaver", (char *) "turn on/off resetting of X server screen saver"},
+ 	{(char *) "-/+grabmouse", (char *) "turn on/off grabbing of mouse and keyboard"},
+@@ -868,8 +868,8 @@
+ #endif
+ 	{(void *) & debug, (char *) "debug", (char *) "Debug", (char *) "off", t_Bool},
+ 	{(void *) & description, (char *) "description", (char *) "Description", (char *) "on", t_Bool},
+-	{(void *) & echokeys, (char *) "echokeys", (char *) "EchoKeys", (char *) "off", t_Bool},
+-	{(void *) & echokey, (char *) "echokey", (char *) "EchoKey", (char *) "?", t_String},
++	{(void *) & echokeys, (char *) "echokeys", (char *) "EchoKeys", (char *) "on", t_Bool},
++	{(void *) & echokey, (char *) "echokey", (char *) "EchoKey", (char *) "*", t_String},
+ 	{(void *) & enablesaver, (char *) "enablesaver", (char *) "EnableSaver", (char *) "off", t_Bool},
+ 	{(void *) & resetsaver, (char *) "resetsaver", (char *) "ResetSaver", (char *) "on", t_Bool},
+ 	{(void *) & grabmouse, (char *) "grabmouse", (char *) "GrabMouse", (char *) "on", t_Bool},
+diff -urNad xlockmore-5.27~/xlock/xlock.man xlockmore-5.27/xlock/xlock.man
+--- xlockmore-5.27~/xlock/xlock.man	2008-10-04 20:52:19.000000000 -0400
++++ xlockmore-5.31/xlock/xlock.man	2009-02-22 14:15:30.695932976 -0500
+@@ -1214,9 +1214,7 @@
+ .I echokeys
+ option causes
+ .B xlock
+-to echo '?' characters (default) for each key typed into the password prompt.
+-Some consider this a security risk, so the default is to not echo
+-anything.
++to echo '*' characters (default) for each key typed into the password prompt.
+ .TP 5
+ .BI \-echokey \ echokey
+ The text character to use for echo key in

@@ -1,0 +1,59 @@
+xlockmore for Debian
+--------------------
+
+Logout Button
+-------------
+
+The logout button is useful in a lab environment as a mechanism for
+keeping people from tying up terminals. The timeout period before the
+button appears is set in /etc/X11/Xresources/xlockmore. The file
+/etc/xlock.staff contains the userids of people who can't be button
+logout'd. Note that this feature is not difficult to circumvent in this
+configuration (a user can override the timeout in his personal
+.Xresources.) It is possible to recompile xlock with a fixed timeout
+period, but it's worth noting that a user can often build his own xlock
+just as easily. 
+
+
+NIS, shadow, and suidness
+-------------------------
+
+This version of xlockmore uses PAM to verify passwords and should *not*
+be setgid or setuid in most cases. Shadow passwords and NIS are handled
+by the default PAM configuration. Note that there is currently no reason
+to avoid using xlockmore-gl with NIS in the default configuration. 
+
+
+Root Logout
+-----------
+
+The root password cannot be used to cancel an xlock. This is because the pam
+module used for authentication can only authenticate the user who started
+xlock. It is possible to enable root logouts by making the xlock binary setgid
+shadow (see below).
+
+PAM
+---
+
+Some PAM modules require being run as root, or with some other elevated
+permissions. Instructions for doing so are outlined below. Note that this may
+introduce security issues in the event an exploitable bug is found in
+xlockmore.
+
+To make the binary setgid shadow:
+dpkg-statoverride --update --add root shadow 2755 /usr/bin/xlock
+
+To make the binary setuid root:
+dpkg-statoverride --update --add root root 4755 /usr/bin/xlock
+
+Xorg
+----
+
+If X is started from the console using 'startx', Control-Alt-Backspace
+will defeat locking mechanism and return to your console unless you put
+"DontZap" in your Xorg.conf file.  Control-Alt-F1 (among others) will
+allow a user to switch to another console even if xlock is running on
+the current console. You can investigate lockvt to lock non-X sessions.
+
+
+Michael Stone <mstone@debian.org>

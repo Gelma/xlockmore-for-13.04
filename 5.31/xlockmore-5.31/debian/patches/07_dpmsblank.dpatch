@@ -1,0 +1,38 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 07_dpmsblank.dpatch by Michael Stone <mstone@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: use dpms for blank mode
+
+@DPATCH@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' xlockmore-5.31~/modes/blank.c xlockmore-5.31/modes/blank.c
+--- xlockmore-5.31~/modes/blank.c	2010-07-20 04:39:37.000000000 +0200
++++ xlockmore-5.31/modes/blank.c	2011-06-06 17:29:31.615513749 +0200
+@@ -45,6 +45,10 @@
+ #include "xlock.h"		/* in xlockmore distribution */
+ #endif /* STANDALONE */
+ 
++#ifdef USE_DPMS
++#include <X11/extensions/dpms.h>
++#endif
++
+ ModeSpecOpt blank_opts =
+ {0, (XrmOptionDescRec *) NULL, 0, (argtype *) NULL, (OptionStruct *) NULL};
+ 
+@@ -60,7 +64,16 @@
+ void
+ init_blank(ModeInfo * mi)
+ {
++#ifdef USE_DPMS
++	BOOL state = False;
++	CARD16 power_level;
++#endif
+ 	MI_CLEARWINDOW(mi);
++#ifdef USE_DPMS
++	if(DPMSInfo(MI_DISPLAY(mi), &power_level, &state) && state)
++		DPMSForceLevel(MI_DISPLAY(mi), DPMSModeOff);
++#endif
++
+ }
+ 
+ /* ARGSUSED */

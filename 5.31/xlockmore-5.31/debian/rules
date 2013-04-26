@@ -1,0 +1,168 @@
+#!/usr/bin/make -f
+# debian.rules file for the Debian/GNU Linux xlockmore package
+# Copyright 1995-96 by Dirk Eddelbuettel <edd@debian.org>
+# Copyright 1998 by Herbert Xu <herbert@debian.org>
+# Copyright 1999 by Michael Stone <mstone@debian.org>
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export CFLAGS=-O2 -g
+
+patch: patch-stamp
+patch-stamp: 
+	dpatch apply-all
+	dpatch cat-all > patch-stamp
+	touch patch-stamp
+
+unpatch: 
+	dpatch deapply-all
+	rm -rf patch-stamp debian-patched
+
+build: patch build-stamp
+build-stamp:
+	dh_testdir
+
+	./configure \
+		--prefix=/usr \
+		--mandir=$(prefix)/share/man \
+		--without-xpm  \
+		--without-mesa \
+		--without-opengl \
+		--without-motif \
+		--without-dtsaver \
+		--without-rplay \
+		--without-nas \
+		--without-esound \
+		--without-ttf \
+		--without-gltt \
+		--without-gtk \
+		--without-freetype \
+		--enable-flagtype=debian \
+		--enable-button-logout=-1 \
+		--enable-staff-file=/etc/xlock.staff \
+		--enable-syslog \
+		--enable-allowroot \
+		--enable-pam --enable-bad-pam --enable-blank-only
+	CFLAGS='-DDEBUG' $(MAKE)
+	cp xlock/xlock debian
+
+	CFLAGS='-DDEBUG' $(MAKE) -i clean
+	rm -f config.h config.log config.status config.cache
+
+	./configure \
+		--prefix=/usr \
+		--mandir=$(prefix)/share/man \
+		--with-xpm  \
+		--with-mesa \
+		--with-opengl \
+		--without-motif \
+		--without-dtsaver \
+		--without-rplay \
+		--without-nas \
+		--without-esound \
+		--without-ttf \
+		--without-gltt \
+		--without-freetype \
+		--without-ftgl \
+		--without-gtk \
+		--enable-flagtype=debian \
+		--enable-button-logout=-1 \
+		--enable-staff-file=/etc/xlock.staff \
+		--enable-syslog \
+		--enable-allowroot \
+		--enable-pam --enable-bad-pam
+	$(MAKE)
+
+	chmod u+x debian/fvwm2rc2menu
+	debian/fvwm2rc2menu
+
+	touch build-stamp
+
+clean: unpatch clean1
+clean1:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+
+	if [ -f Makefile ]; then $(MAKE) clean; fi
+	rm -f debian/xlock
+	rm -f debian/menu debian/xlockmore.menu
+	rm -rf debian/xlockmore-gl
+	rm -rf debian/xlockmore
+	rm -f modes/*.x?m
+
+	dh_clean
+
+# Build architecture-independent files here.
+binary-indep: build
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build
+#	dh_testversion
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	$(MAKE) install \
+		INSTALL_PROGRAM=install \
+		INSTPGMFLAGS="" \
+		xapploaddir=`pwd`/debian/xlockmore-gl/etc/X11/app-defaults \
+		prefix=`pwd`/debian/xlockmore-gl/usr
+	mkdir -p debian/xlockmore-gl/etc/pam.d
+	install -m 644 debian/xlock.pam \
+		debian/xlockmore-gl/etc/pam.d/xlock
+	mkdir -p debian/xlockmore-gl/etc/X11/Xresources
+	install -m 644 debian/xresources \
+		debian/xlockmore-gl/etc/X11/Xresources/xlockmore
+	install -m 644 debian/xlock.staff \
+		debian/xlockmore-gl/etc/xlock.staff
+
+	$(MAKE) install \
+		INSTALL_PROGRAM=install \
+		INSTPGMFLAGS="" \
+		xapploaddir=`pwd`/debian/xlockmore/etc/X11/app-defaults \
+		prefix=`pwd`/debian/xlockmore/usr
+	install debian/xlock debian/xlockmore/usr/bin
+	install -D -m 644 debian/README.Debian \
+		debian/xlockmore/usr/share/doc/xlockmore/README.Debian
+	mkdir -p debian/xlockmore/etc/pam.d
+	install -m 644 debian/xlock.pam \
+		debian/xlockmore/etc/pam.d/xlock
+	mkdir -p debian/xlockmore/etc/X11/Xresources
+	install -m 644 debian/xresources \
+		debian/xlockmore/etc/X11/Xresources/xlockmore
+	install -m 644 debian/xlock.staff \
+		debian/xlockmore/etc/xlock.staff
+
+#	Get rid of default app-defaults
+#       TODO: eventually use this for setting logout, need transition
+	rm -rf debian/xlockmore-gl/etc/X11/app-defaults
+	rm -rf debian/xlockmore/etc/X11/app-defaults
+
+	dh_installdocs
+	dh_buildinfo
+	dh_installexamples
+	dh_installmenu
+#	dh_installinit
+	dh_installcron
+	dh_installman -A xlock/xlock.man
+#	dh_undocumented
+	dh_installchangelogs
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+#	dh_makeshlibs
+	dh_md5sums
+	dh_builddeb
+
+source diff:                                                                  
+	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary

@@ -1,0 +1,92 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 02_clearscreen.dpatch by Michael Stone <mstone@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: clear password echo area and pam output area as necessary
+
+@DPATCH@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' xlockmore-5.31~/xlock/passwd.c xlockmore-5.31/xlock/passwd.c
+--- xlockmore-5.31~/xlock/passwd.c	2010-07-19 21:20:49.067789883 -0400
++++ xlockmore-5.31/xlock/passwd.c	2010-07-19 21:20:49.175789652 -0400
+@@ -1216,6 +1216,9 @@
+ 		(void) printf("PAM: pam_authenticate attempting root\n");
+ #endif
+ 
++		/* clear the putText area */
++		PAM_putText(NULL, NULL, 0);
++
+ 		/* Try as root; bail if no success there either */
+ 		pam_error = pam_set_item(pamh, PAM_USER, ROOT);
+ 		PAM_BAIL;
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' xlockmore-5.31~/xlock/xlock.c xlockmore-5.31/xlock/xlock.c
+--- xlockmore-5.31~/xlock/xlock.c	2010-07-19 21:20:49.071789234 -0400
++++ xlockmore-5.31/xlock/xlock.c	2010-07-19 21:21:43.292288037 -0400
+@@ -2028,6 +2028,17 @@
+ 	bp = 0;
+ 	*s = 0;
+ 
++	if (echokeys) {
++		/* clear input area */
++		XWindowAttributes xgwa;
++		(void) XGetWindowAttributes(dsp, Scr[thisscreen].window, &xgwa);
++		XSetForeground(dsp, Scr[thisscreen].gc, Scr[thisscreen].bg_pixel);
++		XFillRectangle(dsp, Scr[thisscreen].window, Scr[thisscreen].gc,
++			passx, passy - fontheight,
++			xgwa.width - passx, fontheight);
++		XSync(dsp, False);
++	}
++
+ 	for (;;) {
+ 		unsigned long lasteventtime = seconds();
+ 		KeySym keysym;
+@@ -2706,6 +2717,9 @@
+ 			char *textInvalid = (capsLock) ? text_invalidCapsLock :
+ 				text_invalid;
+ 
++#ifdef USE_PAM
++			PAM_putText(NULL,NULL,0);
++#endif
+ 			XSync(dsp, True);	/* flush input buffer */
+ 			(void) sleep(1);
+ 			XFillRectangle(dsp, Scr[screen].window, Scr[screen].gc,
+@@ -4045,9 +4059,24 @@
+   y = Scr[screen].iconpos.y + font->ascent + 200;
+ 
+ #ifdef DEBUG
++  if (msg != NULL)
+     (void) printf( "PAM_putText: message of style %d received: (%s)\n", msg->msg_style, msg->msg );
++  else
++    (void) printf( "PAM_putText: clearing screen\n");
+ #endif
+-  if( ( msg->msg_style == PAM_PROMPT_ECHO_ON ) ||
++
++  if (msg == NULL) {
++    XFlush( dsp );
++    /* Clears the pam display area (three lines of text) */
++    /* TODO: establish the number of lines which need to be cleared */
++    XWindowAttributes xgwa;
++    (void) XGetWindowAttributes(dsp, Scr[screen].window, &xgwa);
++    XFillRectangle(dsp, Scr[startscreen].window, Scr[startscreen].gc,
++        Scr[screen].iconpos.x, Scr[screen].iconpos.y + 200,
++        xgwa.width-y, (fontheight + 2) * 3);
++    XSync( dsp, True );
++  }
++  else if( ( msg->msg_style == PAM_PROMPT_ECHO_ON ) ||
+       ( msg->msg_style == PAM_PROMPT_ECHO_OFF ) )
+   {
+     XFlush(dsp);
+@@ -4097,13 +4126,7 @@
+     XSync( dsp, True );
+     (void) sleep(3);
+ 
+-    XFlush( dsp );
+-    /* Clears three lines of text before displaying the next message */
+-    XFillRectangle(dsp, Scr[startscreen].window, Scr[startscreen].gc,
+-		Scr[screen].iconpos.x, y - font->ascent,
+-		XTextWidth(font, msg->msg, strlen(msg->msg)),
+-		(fontheight + 2) * 3);
+-    XSync( dsp, True );
++    PAM_putText(NULL,NULL,0);
+   }
+ }
+ #endif

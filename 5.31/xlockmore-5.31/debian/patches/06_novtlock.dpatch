@@ -1,0 +1,44 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 06_novtlock.dpatch by Michael Stone <mstone@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: remove references to vtlock in man page
+
+@DPATCH@
+diff -urNad xlockmore-5.27~/xlock/xlock.man xlockmore-5.27/xlock/xlock.man
+--- xlockmore-5.27~/xlock/xlock.man	2009-02-22 14:15:56.959932486 -0500
++++ xlockmore-5.31/xlock/xlock.man	2009-02-22 14:17:01.951932525 -0500
+@@ -60,9 +60,6 @@
+ .BI -/+allowaccess
+ ]
+ [
+-.BI \-vtlock " modename"
+-]
+-[
+ .BI -/+nolock
+ ]
+ [
+@@ -1169,23 +1166,6 @@
+ .B xlock
+ is killed -KILL, the access control list is not lost.
+ .TP 5
+-.BI \-vtlock \ modename
+-This option is used on a XFree86 system to manage VT switching in
+-[off|noswitch|switch|restore] mode.
+-.TP 10
+-.I off
+-means no VT switch locking.
+-.TP 10
+-.I switch
+-means VT switch locking + switching to xlock VT when activated.
+-.TP 10
+-.I restore
+-means VT switch locking + switching to xlock VT when activated +
+-switching back to previous VT when desactivated.
+-.TP 10
+-.I noswitch
+-means VT switch locking only when xlock VT is active.
+-.TP 5
+ .B -/+allowroot
+ The
+ .I allowroot

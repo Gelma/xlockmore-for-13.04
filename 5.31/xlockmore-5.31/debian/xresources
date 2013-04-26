@@ -1,0 +1,3 @@
+! number of minutes to logout button, -1 disables
+! this will take effect the next time X is started
+XLock*logoutButton: -1

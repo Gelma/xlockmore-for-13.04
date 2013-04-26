@@ -1,0 +1,3 @@
+?package(xlockmore):needs="x11" section="Screen/Lock/Special" \
+	title="Blank" \
+	command="/usr/bin/xlock -remote -nice 19 -mode blank"
